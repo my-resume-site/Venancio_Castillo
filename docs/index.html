@@ -2,17 +2,12 @@
 <html
   lang="en"
   x-data="{
-    dark: (localStorage.theme==='dark')
-      || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    dark: (localStorage.theme==='dark') ||
+          (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
   }"
   x-init="
-    // apply initial theme
     document.documentElement.classList.toggle('dark', dark);
-    // react to button clicks and persist
-    $watch('dark', v => {
-      document.documentElement.classList.toggle('dark', v);
-      localStorage.theme = v ? 'dark' : 'light';
-    });
+    $watch('dark', v => { document.documentElement.classList.toggle('dark', v); localStorage.theme = v ? 'dark' : 'light'; });
   "
   class="scroll-smooth"
 >
@@ -24,13 +19,11 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🚀</text></svg>'>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- IMPORTANT: relative path so it works under /portfolio/ -->
+  <!-- RELATIVE path so it works under /portfolio/ -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
-<body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/70 border-b border-black/5 dark:border-white/10">
+<body class="bg-neutral-50 text-neutral-900 selection:bg-brand-600/20 dark:bg-neutral-950 dark:text-neutral-100">
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-neutral-950/70 border-b border-black/5 dark:border-white/10">
   <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
     <a href="#top" class="font-semibold tracking-tight">
       Venancio<span class="text-brand-600">Castillo</span>
@@ -62,17 +55,17 @@
 </header>
   <main>
     <!-- HERO -->
-<section id="top" class="relative overflow-hidden bg-radial">
+<section id="top" class="relative overflow-hidden bg-aurora">
   <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-xs uppercase tracking-[0.20em] text-neutral-500 dark:text-neutral-400">
+        <p class="text-xs uppercase tracking-[0.20em] text-neutral-600 dark:text-neutral-400">
           Business Owner / Freelancer — Cebu, PH
         </p>
         <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
           I build fast one-pagers, set up hosting & domains, and streamline workflows.
         </h1>
-        <p class="mt-5 max-w-2xl text-neutral-600 dark:text-neutral-300">
+        <p class="mt-5 max-w-2xl text-neutral-700 dark:text-neutral-300">
           Skills across self-publishing, web development (TALL & MERN), DigitalOcean server management,
           CRM/ERP configuration, graphics & video editing, and sales/lead-gen — so clients get an idea,
           a site, and a working system.
@@ -127,7 +120,7 @@
   </p>
 
   <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">Websites & One-Pagers</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
         <li>HTML/CSS/JS • Tailwind • Alpine/React</li>
@@ -136,25 +129,25 @@
       </ul>
     </article>
 
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">Hosting & Deployments</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
         <li>GitHub Pages / Vercel / Netlify</li>
-        <li>DigitalOcean droplet/server mgmt</li>
+        <li>DigitalOcean server management</li>
         <li>Domains, DNS, emails</li>
       </ul>
     </article>
 
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">Design / Photo / Video</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>Adobe Photoshop / Premiere / Canva</li>
+        <li>Photoshop / Premiere / Canva</li>
         <li>Brand kits, short-form edits</li>
         <li>Thumbnails, posts, banners</li>
       </ul>
     </article>
 
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">CRM/ERP & Automations</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
         <li>CRM/ERP config & data flows</li>
@@ -163,7 +156,7 @@
       </ul>
     </article>
 
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">Lead Gen / Ops</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
         <li>Executive assistant / SMM</li>
@@ -172,7 +165,7 @@
       </ul>
     </article>
 
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
       <h3 class="font-semibold">Forex Systems & Coaching</h3>
       <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
         <li>EA/automation (MT4/MT5)</li>
@@ -183,28 +176,117 @@
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- TOOLS / SKILLS (with logos) -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
-  <div class="mt-6 flex flex-wrap gap-2 text-sm">
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Tailwind</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Alpine.js</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Laravel/Blade</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Node.js</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">GitHub Actions</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">DigitalOcean</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Google Workspace</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Microsoft 365</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Adobe Photoshop</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Premiere Pro</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Canva</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Metatrader 4/5</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">Lead gen workflows</span>
-          <span class="px-3 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-700 dark:text-neutral-300">CRM/ERP config</span>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+    My everyday stack for design, dev, hosting, and automation.
+  </p>
+
+  
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #06B6D422 inset;">
+                  <img src="https://cdn.simpleicons.org/tailwindcss/ffffff" alt="Tailwind logo"
+               class="h-5 w-5 rounded" style="background-color: #06B6D4" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Tailwind</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #77C1D222 inset;">
+                  <img src="https://cdn.simpleicons.org/alpinedotjs/ffffff" alt="Alpine.js logo"
+               class="h-5 w-5 rounded" style="background-color: #77C1D2" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Alpine.js</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #FF2D2022 inset;">
+                  <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel / Blade logo"
+               class="h-5 w-5 rounded" style="background-color: #FF2D20" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Laravel / Blade</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #33993322 inset;">
+                  <img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js logo"
+               class="h-5 w-5 rounded" style="background-color: #339933" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Node.js</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #2088FF22 inset;">
+                  <img src="https://cdn.simpleicons.org/githubactions/ffffff" alt="GitHub Actions logo"
+               class="h-5 w-5 rounded" style="background-color: #2088FF" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">GitHub Actions</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #0080FF22 inset;">
+                  <img src="https://cdn.simpleicons.org/digitalocean/ffffff" alt="DigitalOcean logo"
+               class="h-5 w-5 rounded" style="background-color: #0080FF" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">DigitalOcean</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #4285F422 inset;">
+                  <img src="https://cdn.simpleicons.org/google/ffffff" alt="Google Workspace logo"
+               class="h-5 w-5 rounded" style="background-color: #4285F4" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Google Workspace</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #F2502222 inset;">
+                  <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="Microsoft 365 logo"
+               class="h-5 w-5 rounded" style="background-color: #F25022" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Microsoft 365</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #31A8FF22 inset;">
+                  <img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Adobe Photoshop logo"
+               class="h-5 w-5 rounded" style="background-color: #31A8FF" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Adobe Photoshop</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #9999FF22 inset;">
+                  <img src="https://cdn.simpleicons.org/adobepremierepro/ffffff" alt="Premiere Pro logo"
+               class="h-5 w-5 rounded" style="background-color: #9999FF" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Premiere Pro</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #00C4CC22 inset;">
+                  <img src="https://cdn.simpleicons.org/canva/ffffff" alt="Canva logo"
+               class="h-5 w-5 rounded" style="background-color: #00C4CC" loading="lazy" />
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Canva</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #6EE7B722 inset;">
+                  <div class="h-5 w-5 grid place-items-center rounded text-sm"
+               style="background-color: #6EE7B7; color: #0b1220">📈</div>
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">MetaTrader 4/5</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #A78BFA22 inset;">
+                  <div class="h-5 w-5 grid place-items-center rounded text-sm"
+               style="background-color: #A78BFA; color: #0b1220">📈</div>
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">Lead gen workflows</span>
+      </div>
+          <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
+                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px #F59E0B22 inset;">
+                  <div class="h-5 w-5 grid place-items-center rounded text-sm"
+               style="background-color: #F59E0B; color: #0b1220">📈</div>
+                <span class="text-sm text-neutral-800 dark:text-neutral-200">CRM/ERP config</span>
+      </div>
       </div>
 </section>
 
-<!-- WORK (simple placeholders for now) -->
+<!-- WORK -->
 <section id="work" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Selected work</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">Case studies coming soon. Meanwhile, here’s my resume:</p>
@@ -213,11 +295,11 @@
   </a>
 </section>
 
-<!-- EXPERIENCE (short list) -->
+<!-- EXPERIENCE -->
 <section id="experience" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
   <div class="mt-6 grid gap-4">
-    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
+    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-neutral-900/70">
       <div class="font-semibold">Entrepreneur — School & Office Supply; Forex Trading</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">Oct 2023 — Present</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
@@ -225,7 +307,7 @@
         <li>Automated trading systems for consistency & decision-making</li>
       </ul>
     </div>
-    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
+    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-neutral-900/70">
       <div class="font-semibold">COO — Better Bound Advertising</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">Nov 2020 — Sep 2023</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
@@ -233,7 +315,7 @@
         <li>Strengthened client relationships & delivery processes</li>
       </ul>
     </div>
-    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
+    <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-neutral-900/70">
       <div class="font-semibold">Marketing Specialist — Nissan, Toyota, Honda Cebu</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">2017 — 2020</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
@@ -246,7 +328,7 @@
 
 <!-- CONTACT -->
 <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
-  <div class="rounded-2xl border border-black/10 dark:border-white/10 p-6">
+  <div class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
     <h2 class="text-2xl md:text-3xl font-semibold">Let’s work together</h2>
     <p class="mt-2 text-neutral-600 dark:text-neutral-300">
       Email or book a call. For detailed briefs, use the intake form below.
@@ -291,13 +373,13 @@
   </div>
 </footer>
   <script>
-    // Minimal reveal-on-scroll helper
+    // Reveal-on-scroll
     document.addEventListener('DOMContentLoaded', () => {
       const els = document.querySelectorAll('[data-reveal]');
       els.forEach(el => el.classList.add('reveal'));
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('inview'); });
-      }, { threshold: .1, rootMargin: '0px 0px -10% 0px' });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('inview'); });
+      }, {threshold:.1, rootMargin:'0px 0px -10% 0px'});
       els.forEach(el => io.observe(el));
     });
   </script>
@@ -306,9 +388,9 @@
   <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
   <script>
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function(){
       const target = document.getElementById('cal-button-mount');
-      if (target) {
+      if(target){
         calendar.schedulingButton.load({
           url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2vib_8B-kTENBtnhdQ_iGcD6n6ue1OWvJZZ6Ig1axeuz8SA83Zjk-YODXiMjBpzLgP9_3dgVUC?gv=true',
           color: '#4F46E5',
