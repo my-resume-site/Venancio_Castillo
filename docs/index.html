@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en" x-data="{dark: (localStorage.theme==='dark') || window.matchMedia('(prefers-color-scheme: dark)').matches}" x-init="document.documentElement.classList.toggle('dark', dark); $watch('dark', v=>localStorage.theme = v ? 'dark' : 'light')" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venancio Castillo Jr, LPT — Portfolio</title>
+  <meta name="description" content="One‑pager websites, hosting & deployments, design/video editing, CRM/ERP setup, and automations.">
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🚀</text></svg>'>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 dark:bg-neutral-950 dark:text-neutral-100">
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/70 border-b border-white/10">
+  <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <a href="#top" class="font-semibold tracking-tight">Venancio<span class="text-brand-500">Castillo</span></a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#services" class="hover:text-brand-500">Services</a>
+      <a href="#skills" class="hover:text-brand-500">Skills</a>
+      <a href="#work" class="hover:text-brand-500">Work</a>
+      <a href="#experience" class="hover:text-brand-500">Experience</a>
+      <a href="#contact" class="hover:text-brand-500">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <span id="cal-button-mount"></span>
+      <button @click="dark=!dark" class="rounded-xl border border-white/15 px-3 py-2 text-xs hover:bg-white/10">🌓 Toggle</button>
+    </div>
+  </div>
+</header>  <main>
+    <section id="top" class="relative overflow-hidden bg-radial">
+  <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-300/80">Business Owner / Freelancer — Cebu, PH</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
+          I build fast one-pagers, set up hosting & domains, and streamline workflows.
+        </h1>
+        <p class="mt-5 max-w-2xl text-neutral-300">
+          Skills across self-publishing, web development (TALL & MERN), DigitalOcean server management,
+          CRM/ERP configuration, graphics & video editing, and sales/lead-gen—so clients get an idea,
+          a site, and a working system.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium hover:bg-brand-500">Start a project</a>
+          <a href="#work" class="rounded-2xl border border-white/10 px-5 py-3 text-sm font-medium hover:bg-white/10">See my work</a>
+        </div>
+      </div>
+      <div class="flex md:justify-end">
+        <img src="assets/img/me.jpg" alt="Venancio Castillo Jr, LPT" class="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl border border-white/10 shadow-lg"/>
+      </div>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div class="rounded-2xl border border-white/10 p-5">
+        <div class="text-2xl font-semibold">8+</div>
+        <div class="text-xs text-neutral-400">Years experience</div>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5">
+        <div class="text-2xl font-semibold">120+</div>
+        <div class="text-xs text-neutral-400">Projects shipped</div>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5">
+        <div class="text-2xl font-semibold">~1s</div>
+        <div class="text-xs text-neutral-400">Typical LCP</div>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-5">
+        <div class="text-2xl font-semibold">100</div>
+        <div class="text-xs text-neutral-400">Lighthouse a11y</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">What I do</h2>
+  <p class="mt-2 text-neutral-300">I ship one-pagers and small sites, wire up automations, and handle hosting—end to end.</p>
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <article data-reveal class="rounded-2xl border border-white/10 p-6">
+      <h3 class="font-semibold">Websites & One-Pagers</h3>
+      <p class="mt-2 text-sm text-neutral-300">Fast, responsive, SEO-ready pages with clean copy and analytics.</p>
+      <ul class="mt-4 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>HTML/CSS/JS • Tailwind • React</li>
+        <li>TALL & MERN approaches</li>
+        <li>Accessibility & performance</li>
+      </ul>
+    </article>
+    <article data-reveal class="rounded-2xl border border-white/10 p-6">
+      <h3 class="font-semibold">Hosting, Domains & Deploys</h3>
+      <p class="mt-2 text-sm text-neutral-300">From free static hosting to VPS (DigitalOcean), SSL, and custom domains.</p>
+      <ul class="mt-4 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>GitHub Pages/Netlify/Vercel</li>
+        <li>DigitalOcean droplets</li>
+        <li>Basic DB setup (MySQL/Postgres)</li>
+      </ul>
+    </article>
+    <article data-reveal class="rounded-2xl border border-white/10 p-6">
+      <h3 class="font-semibold">Design, Video & Marketing</h3>
+      <p class="mt-2 text-sm text-neutral-300">Brand-aligned graphics, photo retouch, short-form video, and lead-gen support.</p>
+      <ul class="mt-4 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>Photoshop • Illustrator • Premiere</li>
+        <li>Copy polish & landing optimization</li>
+        <li>CRM/ERP config & automations</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Skills & Tools</h2>
+  <p class="mt-2 text-neutral-300">Video/photo editing, website dev, hosting & deployment, database setup, cloud (DigitalOcean), team tooling (Google Workspace, Microsoft 365).</p>
+  <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Photoshop" class="w-5 h-5" src="https://cdn.simpleicons.org/adobephotoshop/31A8FF"/>
+        <span>Photoshop</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Illustrator" class="w-5 h-5" src="https://cdn.simpleicons.org/adobeillustrator/FF9A00"/>
+        <span>Illustrator</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Premiere Pro" class="w-5 h-5" src="https://cdn.simpleicons.org/adobepremierepro/9999FF"/>
+        <span>Premiere Pro</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Figma" class="w-5 h-5" src="https://cdn.simpleicons.org/figma/F24E1E"/>
+        <span>Figma</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Canva" class="w-5 h-5" src="https://cdn.simpleicons.org/canva/00C4CC"/>
+        <span>Canva</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="React" class="w-5 h-5" src="https://cdn.simpleicons.org/react/61DAFB"/>
+        <span>React</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Tailwind CSS" class="w-5 h-5" src="https://cdn.simpleicons.org/tailwindcss/38BDF8"/>
+        <span>Tailwind CSS</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Laravel" class="w-5 h-5" src="https://cdn.simpleicons.org/laravel/FF2D20"/>
+        <span>Laravel</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="MySQL" class="w-5 h-5" src="https://cdn.simpleicons.org/mysql/4479A1"/>
+        <span>MySQL</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="PostgreSQL" class="w-5 h-5" src="https://cdn.simpleicons.org/postgresql/4169E1"/>
+        <span>PostgreSQL</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="DigitalOcean" class="w-5 h-5" src="https://cdn.simpleicons.org/digitalocean/0080FF"/>
+        <span>DigitalOcean</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="GitHub" class="w-5 h-5" src="https://cdn.simpleicons.org/github/BBBBBB"/>
+        <span>GitHub</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Netlify" class="w-5 h-5" src="https://cdn.simpleicons.org/netlify/00C7B7"/>
+        <span>Netlify</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Vercel" class="w-5 h-5" src="https://cdn.simpleicons.org/vercel/FFFFFF"/>
+        <span>Vercel</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Google Workspace" class="w-5 h-5" src="https://cdn.simpleicons.org/google/4285F4"/>
+        <span>Google Workspace</span>
+      </div>
+          <div data-reveal class="flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm">
+        <img alt="Microsoft 365" class="w-5 h-5" src="https://cdn.simpleicons.org/microsoft/666666"/>
+        <span>Microsoft 365</span>
+      </div>
+      </div>
+</section>
+
+<section id="work" class="mx-auto max-w-6xl px-4 py-20">
+  <div class="flex items-end justify-between gap-4">
+    <h2 class="text-2xl md:text-3xl font-semibold">Recent work</h2>
+    <a href="#contact" class="text-sm text-brand-500 hover:text-brand-600">Work with me →</a>
+  </div>
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a data-reveal href="#" class="group rounded-2xl border border-white/10 overflow-hidden block hover:bg-white/5 transition">
+      <div class="p-5">
+        <div class="text-sm text-brand-500">One-pager</div>
+        <div class="mt-1 font-semibold">Retail Supply Landing</div>
+        <p class="mt-2 text-sm text-neutral-300">SEO + form capture, fast deploy.</p>
+      </div>
+    </a>
+    <a data-reveal href="#" class="group rounded-2xl border border-white/10 overflow-hidden block hover:bg-white/5 transition">
+      <div class="p-5">
+        <div class="text-sm text-brand-500">Automation</div>
+        <div class="mt-1 font-semibold">Leads → Sheets → Email</div>
+        <p class="mt-2 text-sm text-neutral-300">Auto replies & tracking, no backend.</p>
+      </div>
+    </a>
+    <a data-reveal href="#" class="group rounded-2xl border border-white/10 overflow-hidden block hover:bg-white/5 transition">
+      <div class="p-5">
+        <div class="text-sm text-brand-500">Mini App</div>
+        <div class="mt-1 font-semibold">Quote Calculator</div>
+        <p class="mt-2 text-sm text-neutral-300">Embeddable widget with export.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="experience" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
+  <div class="mt-6 grid md:grid-cols-2 gap-6">
+    <div data-reveal class="rounded-2xl border border-white/10 p-6">
+      <div class="text-sm text-neutral-400">Oct 2023 – Present</div>
+      <h3 class="font-semibold">Entrepreneur — School & Office Supply • Forex Trading</h3>
+      <ul class="mt-3 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>Operate retail supply business for institutions & LGUs.</li>
+        <li>End-to-end ops: procurement, sales, logistics, client success.</li>
+        <li>Forex trading; build helpful automations & tools.</li>
+      </ul>
+    </div>
+    <div data-reveal class="rounded-2xl border border-white/10 p-6">
+      <div class="text-sm text-neutral-400">Nov 2020 – Sept 2023</div>
+      <h3 class="font-semibold">COO — Better Bound Advertising</h3>
+      <ul class="mt-3 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>Led campaign execution & process improvements.</li>
+        <li>Resource allocation and inter-team coordination.</li>
+        <li>Strengthened client relationships & service quality.</li>
+      </ul>
+    </div>
+    <div data-reveal class="rounded-2xl border border-white/10 p-6">
+      <div class="text-sm text-neutral-400">2017 – 2020</div>
+      <h3 class="font-semibold">Marketing Specialist — Honda, Toyota, Nissan</h3>
+      <ul class="mt-3 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>Advised clients on products, financing, and after-sales.</li>
+        <li>Negotiations and closings while building long-term clients.</li>
+        <li>Delivered strong customer experience through clear comms.</li>
+      </ul>
+    </div>
+    <div data-reveal class="rounded-2xl border border-white/10 p-6">
+      <div class="text-sm text-neutral-400">2015 – 2017</div>
+      <h3 class="font-semibold">ESL Instructor</h3>
+      <ul class="mt-3 space-y-2 text-sm text-neutral-300 list-disc list-inside">
+        <li>Taught Creative Writing & ESL; designed engaging lessons.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="mx-auto max-w-6xl px-4 py-20">
+  <div class="rounded-2xl border border-white/10 p-8">
+    <h2 class="text-2xl md:text-3xl font-semibold">Let’s work together</h2>
+    <p class="mt-2 text-neutral-300">Email or book a call. For detailed briefs, use the intake form below.</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="mailto:donvenancioiii@gmail.com?subject=Project%20inquiry&body=Hi%20Venancio,%20here's%20what%20I%20need:" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium hover:bg-brand-500">Email me</a>
+      <a href="https://wa.me/639776000971?text=Hi%20Venancio%2C%20I&#039;d%20like%20to%20start%20a%20project." class="rounded-2xl border border-white/10 px-5 py-3 text-sm font-medium hover:bg-white/10">WhatsApp</a>
+      <noscript><a class="rounded-2xl border border-white/10 px-5 py-3 text-sm font-medium" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2vib_8B-kTENBtnhdQ_iGcD6n6ue1OWvJZZ6Ig1axeuz8SA83Zjk-YODXiMjBpzLgP9_3dgVUC?gv=true">Book a call</a></noscript>
+    </div>
+
+    <h3 class="mt-10 font-semibold">Discovery Form — Short Intake (3–5 min)</h3>
+    <div class="mt-4">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDr2HMBE5k3i-T-fCKNZlEjjP77UUEogKJ0usRX_HcTSv50w/viewform?embedded=true" width="100%" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-neutral-400 flex flex-wrap items-center justify-between gap-4">
+    <div>© <span id="year">2025</span> Venancio Castillo Jr, LPT. Cebu, PH.</div>
+    <div class="flex gap-4">
+      <a href="https://github.com/DonVen555" class="hover:text-neutral-200">GitHub</a>
+      <a href="https://wa.me/639776000971?text=Hi%20Venancio%2C%20I&#039;d%20like%20to%20start%20a%20project." class="hover:text-neutral-200">WhatsApp</a>
+      <a href="#top" class="hover:text-neutral-200">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+  <script>
+    // IntersectionObserver reveal
+    document.addEventListener('DOMContentLoaded', () => {
+      const els = document.querySelectorAll('[data-reveal]');
+      els.forEach(el=>el.classList.add('reveal'));
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('inview'); });
+      }, {threshold: .1, rootMargin: '0px 0px -10% 0px'});
+      els.forEach(el=>io.observe(el));
+    });
+  </script>
+
+  <!-- Google Calendar booking button (popup) -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+  <script>
+    window.addEventListener('load', function(){
+      const target = document.getElementById('cal-button-mount');
+      if(target){
+        calendar.schedulingButton.load({
+          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2vib_8B-kTENBtnhdQ_iGcD6n6ue1OWvJZZ6Ig1axeuz8SA83Zjk-YODXiMjBpzLgP9_3dgVUC?gv=true',
+          color: '#4F46E5',
+          label: 'Book a call',
+          target
+        });
+      }
+    });
+  </script>
+</body>
+</html>
