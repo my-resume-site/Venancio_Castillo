@@ -1,0 +1,14 @@
+{
+  "name": "donven555/portfolio",
+  "require": {
+    "tightenco/jigsaw": "^1.7"
+  },
+  "scripts": {
+    "build": [
+      "@php vendor/bin/jigsaw build"
+    ],
+    "build:production": [
+      "@php vendor/bin/jigsaw build production"
+    ]
+  }
+}
