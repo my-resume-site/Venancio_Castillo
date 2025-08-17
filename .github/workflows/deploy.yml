@@ -8,34 +8,39 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.2"
           tools: composer
+          extensions: mbstring, dom, fileinfo, tokenizer, ctype, json
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: |
-          composer install --no-dev --prefer-dist --no-progress --no-interaction
-          npm install --no-audit --no-fund
+      - name: Install Composer deps
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction
 
-      - name: Build CSS
-        run: npm run build:css
+      - name: Install Node deps
+        run: npm install --no-audit --no-fund
 
-      - name: Build site
-        run: vendor/bin/jigsaw build production
+      # If you prefer, you can run: npm run build:css
+      - name: Build Tailwind CSS
+        run: npx tailwindcss -i source/_assets/css/tailwind.css -o source/assets/css/main.css --minify
+
+      - name: Build site with Jigsaw
+        run: php vendor/bin/jigsaw build production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build_production
+          publish_dir: build_production
           publish_branch: gh-pages
