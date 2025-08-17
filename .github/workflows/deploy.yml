@@ -1,4 +1,4 @@
-name: Build and Deploy (Jigsaw + Tailwind)
+name: Build and Deploy (Jigsaw + Tailwind → docs)
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -31,16 +33,19 @@ jobs:
       - name: Install Node deps
         run: npm install --no-audit --no-fund
 
-      # If you prefer, you can run: npm run build:css
       - name: Build Tailwind CSS
         run: npx tailwindcss -i source/_assets/css/tailwind.css -o source/assets/css/main.css --minify
 
       - name: Build site with Jigsaw
         run: php vendor/bin/jigsaw build production
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Disable Jekyll (safety)
+        run: touch build_production/.nojekyll
+
+      - name: Deploy built site to main/docs
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build_production
-          publish_branch: gh-pages
+          branch: main # stay on main
+          folder: build_production # what to publish
+          target-folder: docs # where to publish
+          clean: true
