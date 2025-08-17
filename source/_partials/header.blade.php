@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/70 border-b border-black/5 dark:border-white/10">
+<header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-neutral-950/70 border-b border-black/5 dark:border-white/10">
   <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
     <a href="#top" class="font-semibold tracking-tight">
       Venancio<span class="text-brand-600">Castillo</span>

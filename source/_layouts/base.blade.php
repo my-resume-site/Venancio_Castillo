@@ -2,17 +2,12 @@
 <html
   lang="en"
   x-data="{
-    dark: (localStorage.theme==='dark')
-      || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    dark: (localStorage.theme==='dark') ||
+          (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
   }"
   x-init="
-    // apply initial theme
     document.documentElement.classList.toggle('dark', dark);
-    // react to button clicks and persist
-    $watch('dark', v => {
-      document.documentElement.classList.toggle('dark', v);
-      localStorage.theme = v ? 'dark' : 'light';
-    });
+    $watch('dark', v => { document.documentElement.classList.toggle('dark', v); localStorage.theme = v ? 'dark' : 'light'; });
   "
   class="scroll-smooth"
 >
@@ -24,12 +19,10 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🚀</text></svg>'>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- IMPORTANT: relative path so it works under /portfolio/ -->
+  <!-- RELATIVE path so it works under /portfolio/ -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
-<body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+<body class="bg-neutral-50 text-neutral-900 selection:bg-brand-600/20 dark:bg-neutral-950 dark:text-neutral-100">
   @include('_partials.header')
 
   <main>
@@ -39,13 +32,13 @@
   @include('_partials.footer')
 
   <script>
-    // Minimal reveal-on-scroll helper
+    // Reveal-on-scroll
     document.addEventListener('DOMContentLoaded', () => {
       const els = document.querySelectorAll('[data-reveal]');
       els.forEach(el => el.classList.add('reveal'));
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('inview'); });
-      }, { threshold: .1, rootMargin: '0px 0px -10% 0px' });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('inview'); });
+      }, {threshold:.1, rootMargin:'0px 0px -10% 0px'});
       els.forEach(el => io.observe(el));
     });
   </script>
@@ -54,9 +47,9 @@
   <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
   <script>
-    window.addEventListener('load', function () {
+    window.addEventListener('load', function(){
       const target = document.getElementById('cal-button-mount');
-      if (target) {
+      if(target){
         calendar.schedulingButton.load({
           url: '{{ $page->calendarBookingUrl }}',
           color: '#4F46E5',
