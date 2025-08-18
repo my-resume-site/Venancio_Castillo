@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Reveal on scroll */
+/* Reveal animation */
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
 .reveal.inview{opacity:1;transform:none}
 
@@ -16,6 +16,6 @@
   animation: aurora 18s ease-in-out infinite alternate;
 }
 @keyframes aurora{
-  0%   {background-position: 0% 20%, 0% 80%,   0% 50%}
-  100% {background-position: 100% 0%, 30% 100%, 100% 50%}
+  0%   {background-position: 0% 20%, 0% 80%, 0% 50%}
+  100% {background-position: 100% 0%,  30% 100%, 100% 50%}
 }

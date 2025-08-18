@@ -89,25 +89,18 @@
   </div>
 </section>
 
-<!-- PROJECTS: 14-slide carousel -->
+<!-- PROJECTS: 14-slide GPU slider (no flicker) -->
 @php
-  // Put images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
-  $projects = [
-    ['title'=>'Project 1','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/1.jpg','meta'=>'Case study'],
-    ['title'=>'Project 2','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/2.jpg','meta'=>'Case study'],
-    ['title'=>'Project 3','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/3.jpg','meta'=>'Case study'],
-    ['title'=>'Project 4','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/4.jpg','meta'=>'Case study'],
-    ['title'=>'Project 5','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/5.jpg','meta'=>'Case study'],
-    ['title'=>'Project 6','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/6.jpg','meta'=>'Case study'],
-    ['title'=>'Project 7','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/7.jpg','meta'=>'Case study'],
-    ['title'=>'Project 8','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/8.jpg','meta'=>'Case study'],
-    ['title'=>'Project 9','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/9.jpg','meta'=>'Case study'],
-    ['title'=>'Project 10','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/10.jpg','meta'=>'Case study'],
-    ['title'=>'Project 11','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/11.jpg','meta'=>'Case study'],
-    ['title'=>'Project 12','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/12.jpg','meta'=>'Case study'],
-    ['title'=>'Project 13','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/13.jpg','meta'=>'Case study'],
-    ['title'=>'Project 14','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/14.jpg','meta'=>'Case study'],
-  ];
+  // Place images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
+  $projects = [];
+  for ($n=1; $n<=14; $n++) {
+    $projects[] = [
+      'title' => "Project $n",
+      'desc'  => 'Web / Ops / Design',
+      'img'   => "assets/img/projects/$n.jpg",
+      'meta'  => 'Case study'
+    ];
+  }
 @endphp
 
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
@@ -115,38 +108,45 @@
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
 
   <div
-    x-data="carousel({ count: {{ count($projects) }}, interval: 4500 })"
+    x-data="slider({ count: {{ count($projects) }}, interval: 4500 })"
     x-init="init()"
     @keydown.left.prevent="prev()" @keydown.right.prevent="next()"
     tabindex="0"
     class="mt-8 relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60"
-    @pointerdown="onDown($event)" @pointerup="onUp($event)" @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
+    @pointerdown="onDown($event)" @pointerup="onUp($event)"
+    @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
   >
-    @foreach ($projects as $idx => $a)
-      <article
-        x-show="i === {{ $idx }}"
-        x-transition.opacity.scale.50ms
-        class="grid md:grid-cols-2 gap-6 items-center p-4 md:p-6 lg:p-10 min-h-[340px]"
-        aria-roledescription="slide"
+    <div class="relative overflow-hidden">
+      <div
+        x-ref="track"
+        class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
       >
-        <div class="order-2 md:order-1">
-          <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
-          <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
-          <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
-        </div>
-        <div class="order-1 md:order-2">
-          <img
-            src="{{ $a['img'] }}"
-            srcset="{{ $a['img'] }} 1600w"
-            sizes="(min-width: 768px) 576px, 100vw"
-            alt="{{ $a['title'] }}"
-            width="800" height="600"
-            class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
-            loading="lazy"
-          />
-        </div>
-      </article>
-    @endforeach
+        @foreach ($projects as $a)
+          <article
+            class="w-full shrink-0 grid md:grid-cols-2 gap-6 items-center p-4 md:p-6 lg:p-10 min-h-[380px]"
+            aria-roledescription="slide"
+          >
+            <div class="order-2 md:order-1">
+              <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
+              <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
+              <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
+            </div>
+
+            <div class="order-1 md:order-2">
+              <img
+                src="{{ $a['img'] }}"
+                srcset="{{ $a['img'] }} 1600w"
+                sizes="(min-width: 768px) 576px, 100vw"
+                alt="{{ $a['title'] }}"
+                width="800" height="600"
+                class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
+                loading="lazy"
+              />
+            </div>
+          </article>
+        @endforeach
+      </div>
+    </div>
 
     <!-- Prev / Next -->
     <button
@@ -160,17 +160,18 @@
 
     <!-- Dots -->
     <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
-      <template x-for="(dot, idx) in count" :key="idx">
+      <template x-for="(_, idx) in {{ count($projects) }}" :key="idx">
         <button
           class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
           :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
-          @click="go(idx)" :aria-label="`Go to slide ${idx+1}`"></button>
+          @click="go(idx)"
+          :aria-label="`Go to slide ${idx+1}`"></button>
       </template>
     </div>
   </div>
 </section>
 
-<!-- SERVICES (kept concise) -->
+<!-- SERVICES -->
 <section id="services" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
   <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
