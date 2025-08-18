@@ -7,29 +7,27 @@
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="text-xs uppercase tracking-[0.20em] text-neutral-600 dark:text-neutral-400">
-          {{ $page->siteTagline }}
+          Forex Trader • Operator • Trainer — Cebu, PH
         </p>
         <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
-          I build fast one-pagers, set up hosting & domains, and streamline workflows.
+          I build reliable systems—<span class="text-brand-600">trading</span>, web, and operations—
+          so you get outcomes, not chaos.
         </h1>
         <p class="mt-5 max-w-2xl text-neutral-700 dark:text-neutral-300">
-          Skills across self-publishing, web development (TALL & MERN), DigitalOcean server management,
-          CRM/ERP configuration, graphics & video editing, and sales/lead-gen — so clients get an idea,
-          a site, and a working system.
+          Full-stack operator (former COO) and profitable forex trader. I ship one-pagers,
+          wire up automations, and coach teams—while running a disciplined, risk-first FX process.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">
-            Start a project
-          </a>
-          <a href="#work" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
-            See my work
-          </a>
+          <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Start a project</a>
+          <a href="#forex" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Forex spotlight</a>
         </div>
       </div>
 
       <div class="flex md:justify-end">
         <img
           src="assets/img/me.jpg"
+          srcset="assets/img/me.jpg 800w"
+          sizes="(min-width: 768px) 288px, 224px"
           alt="Venancio Castillo Jr"
           width="288" height="288"
           class="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl border border-black/10 dark:border-white/10 shadow-lg"
@@ -41,94 +39,172 @@
     <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
       <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
         <div class="text-2xl font-semibold">8+</div>
-        <div class="text-xs text-neutral-500 dark:text-neutral-400">Years experience</div>
+        <div class="text-xs text-neutral-500 dark:text-neutral-400">Years in ops & sales</div>
       </div>
       <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
         <div class="text-2xl font-semibold">120+</div>
         <div class="text-xs text-neutral-500 dark:text-neutral-400">Projects shipped</div>
       </div>
       <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
-        <div class="text-2xl font-semibold">~1s</div>
-        <div class="text-xs text-neutral-500 dark:text-neutral-400">Typical LCP</div>
+        <div class="text-2xl font-semibold">MT4/5</div>
+        <div class="text-xs text-neutral-500 dark:text-neutral-400">EA & systems</div>
       </div>
       <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5">
-        <div class="text-2xl font-semibold">100</div>
-        <div class="text-xs text-neutral-500 dark:text-neutral-400">Lighthouse a11y</div>
+        <div class="text-2xl font-semibold">COO</div>
+        <div class="text-xs text-neutral-500 dark:text-neutral-400">Ops leadership & training</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">What I do</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    I ship one-pagers and small sites, wire up automations, and handle hosting — end to end.
-  </p>
+<!-- FOREX SPOTLIGHT -->
+<section id="forex" class="mx-auto max-w-6xl px-4 py-20">
+  <div class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+    <h2 class="text-2xl md:text-3xl font-semibold">Forex trading — disciplined & repeatable</h2>
+    <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+      I trade a structured, rules-based system: plan → execute → record → review.
+      Focus: risk management, journaling, and continuous iteration. I also build MT4/5 EAs to automate parts of the process.
+    </p>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-xl border border-black/10 dark:border-white/10 p-4">
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">Approach</div>
+        <div class="mt-1 font-semibold">Price action + risk-first</div>
+      </div>
+      <div class="rounded-xl border border-black/10 dark:border-white/10 p-4">
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">System</div>
+        <div class="mt-1 font-semibold">Documented rules & playbooks</div>
+      </div>
+      <div class="rounded-xl border border-black/10 dark:border-white/10 p-4">
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">Automation</div>
+        <div class="mt-1 font-semibold">EA builds, alerts, backtests</div>
+      </div>
+      <div class="rounded-xl border border-black/10 dark:border-white/10 p-4">
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">Coaching</div>
+        <div class="mt-1 font-semibold">Beginner → Advanced, journals</div>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
+      *Trading involves risk. This is not financial advice; results vary with discipline and risk management.
+    </p>
+  </div>
+</section>
 
+<!-- PROJECTS: 14-slide carousel -->
+@php
+  // Put images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
+  $projects = [
+    ['title'=>'Project 1','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/1.jpg','meta'=>'Case study'],
+    ['title'=>'Project 2','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/2.jpg','meta'=>'Case study'],
+    ['title'=>'Project 3','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/3.jpg','meta'=>'Case study'],
+    ['title'=>'Project 4','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/4.jpg','meta'=>'Case study'],
+    ['title'=>'Project 5','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/5.jpg','meta'=>'Case study'],
+    ['title'=>'Project 6','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/6.jpg','meta'=>'Case study'],
+    ['title'=>'Project 7','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/7.jpg','meta'=>'Case study'],
+    ['title'=>'Project 8','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/8.jpg','meta'=>'Case study'],
+    ['title'=>'Project 9','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/9.jpg','meta'=>'Case study'],
+    ['title'=>'Project 10','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/10.jpg','meta'=>'Case study'],
+    ['title'=>'Project 11','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/11.jpg','meta'=>'Case study'],
+    ['title'=>'Project 12','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/12.jpg','meta'=>'Case study'],
+    ['title'=>'Project 13','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/13.jpg','meta'=>'Case study'],
+    ['title'=>'Project 14','desc'=>'Web / Ops / Design','img'=>'assets/img/projects/14.jpg','meta'=>'Case study'],
+  ];
+@endphp
+
+<section id="projects" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
+
+  <div
+    x-data="carousel({ count: {{ count($projects) }}, interval: 4500 })"
+    x-init="init()"
+    @keydown.left.prevent="prev()" @keydown.right.prevent="next()"
+    tabindex="0"
+    class="mt-8 relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60"
+    @pointerdown="onDown($event)" @pointerup="onUp($event)" @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
+  >
+    @foreach ($projects as $idx => $a)
+      <article
+        x-show="i === {{ $idx }}"
+        x-transition.opacity.scale.50ms
+        class="grid md:grid-cols-2 gap-6 items-center p-4 md:p-6 lg:p-10 min-h-[340px]"
+        aria-roledescription="slide"
+      >
+        <div class="order-2 md:order-1">
+          <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
+          <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
+          <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
+        </div>
+        <div class="order-1 md:order-2">
+          <img
+            src="{{ $a['img'] }}"
+            srcset="{{ $a['img'] }} 1600w"
+            sizes="(min-width: 768px) 576px, 100vw"
+            alt="{{ $a['title'] }}"
+            width="800" height="600"
+            class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
+            loading="lazy"
+          />
+        </div>
+      </article>
+    @endforeach
+
+    <!-- Prev / Next -->
+    <button
+      @click="prev()" aria-label="Previous"
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >‹</button>
+    <button
+      @click="next()" aria-label="Next"
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >›</button>
+
+    <!-- Dots -->
+    <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
+      <template x-for="(dot, idx) in count" :key="idx">
+        <button
+          class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
+          :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
+          @click="go(idx)" :aria-label="`Go to slide ${idx+1}`"></button>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (kept concise) -->
+<section id="services" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
   <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Websites & One-Pagers</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>HTML/CSS/JS • Tailwind • Alpine/React</li>
-        <li>TALL & MERN approaches</li>
-        <li>Performance, accessibility, SEO</li>
+      <h3 class="font-semibold">Forex coaching & EA</h3>
+      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+        <li>Beginner → Advanced training</li>
+        <li>Risk mgmt, journaling, psychology</li>
+        <li>MT4/5 EA builds & backtests</li>
       </ul>
     </article>
-
     <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Hosting & Deployments</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>GitHub Pages / Vercel / Netlify</li>
-        <li>DigitalOcean server management</li>
-        <li>Domains, DNS, emails</li>
+      <h3 class="font-semibold">Websites & one-pagers</h3>
+      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+        <li>Tailwind / Alpine / React</li>
+        <li>Hosting & deployments</li>
+        <li>SEO & analytics</li>
       </ul>
     </article>
-
     <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Design / Photo / Video</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>Photoshop / Premiere / Canva</li>
-        <li>Brand kits, short-form edits</li>
-        <li>Thumbnails, posts, banners</li>
-      </ul>
-    </article>
-
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">CRM/ERP & Automations</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>CRM/ERP config & data flows</li>
-        <li>Forms, zaps, reporting</li>
-        <li>Google Workspace & 365</li>
-      </ul>
-    </article>
-
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Lead Gen / Ops</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>Executive assistant / SMM</li>
-        <li>Prospecting pipelines</li>
-        <li>Outbound scripts & tracking</li>
-      </ul>
-    </article>
-
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Forex Systems & Coaching</h3>
-      <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-        <li>EA/automation (MT4/MT5)</li>
-        <li>Risk, journaling, psychology</li>
-        <li>Beginner → Advanced coaching</li>
+      <h3 class="font-semibold">Ops & training (COO)</h3>
+      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+        <li>Sales & service playbooks</li>
+        <li>Team training & SOPs</li>
+        <li>CRM/ERP workflows</li>
       </ul>
     </article>
   </div>
 </section>
 
-<!-- TOOLS / SKILLS (with logos) -->
+<!-- TOOLS / SKILLS (logos) -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    My everyday stack for design, dev, hosting, and automation.
-  </p>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">My stack for design, dev, hosting, and automation.</p>
 
   @php
     $tools = [
@@ -167,15 +243,6 @@
   </div>
 </section>
 
-<!-- WORK -->
-<section id="work" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Selected work</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">Case studies coming soon. Meanwhile, here’s my resume:</p>
-  <a href="assets/docs/resume.pdf" class="mt-4 inline-block rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm hover:bg-black/5 dark:hover:bg-white/10">
-    Download resume (PDF)
-  </a>
-</section>
-
 <!-- EXPERIENCE -->
 <section id="experience" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
@@ -184,24 +251,23 @@
       <div class="font-semibold">Entrepreneur — School & Office Supply; Forex Trading</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">Oct 2023 — Present</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>End-to-end ops: procurement, logistics, client management</li>
-        <li>Automated trading systems for consistency & decision-making</li>
+        <li>Built and ran disciplined FX trading system with documented rules</li>
+        <li>Managed operations: procurement, logistics, client relationships</li>
       </ul>
     </div>
     <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-neutral-900/70">
       <div class="font-semibold">COO — Better Bound Advertising</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">Nov 2020 — Sep 2023</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>Oversaw campaign execution, resource allocation, and QA</li>
-        <li>Strengthened client relationships & delivery processes</li>
+        <li>Led sales, production, and IT teams; built SOPs & training programs</li>
+        <li>Drove campaign execution, resource allocation, and delivery quality</li>
       </ul>
     </div>
     <div class="rounded-2xl border border-black/10 dark:border-white/10 p-5 bg-white/70 dark:bg-neutral-900/70">
       <div class="font-semibold">Marketing Specialist — Nissan, Toyota, Honda Cebu</div>
       <div class="text-xs text-neutral-500 dark:text-neutral-400">2017 — 2020</div>
       <ul class="mt-2 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>Advised clients, handled negotiations & closings</li>
-        <li>Delivered standout customer experiences</li>
+        <li>Sales training, negotiations, and customer experience improvements</li>
       </ul>
     </div>
   </div>
@@ -211,9 +277,7 @@
 <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
   <div class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
     <h2 class="text-2xl md:text-3xl font-semibold">Let’s work together</h2>
-    <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-      Email or book a call. For detailed briefs, use the intake form below.
-    </p>
+    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Email or book a call. For detailed briefs, use the intake form below.</p>
 
     <div class="mt-6 flex flex-wrap gap-3">
       <a href="mailto:{{ $page->email }}?subject=Project%20inquiry&body=Hi%20Venancio,%0A%0AWhat%20do%20you%20need:"

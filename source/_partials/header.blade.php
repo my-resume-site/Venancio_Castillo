@@ -5,11 +5,12 @@
     </a>
 
     <nav class="hidden md:flex gap-6 text-sm">
-      <a href="#services"   class="hover:text-brand-600">Services</a>
-      <a href="#skills"     class="hover:text-brand-600">Skills</a>
-      <a href="#work"       class="hover:text-brand-600">Work</a>
+      <a href="#forex"     class="hover:text-brand-600">Forex</a>
+      <a href="#projects"  class="hover:text-brand-600">Projects</a>
+      <a href="#services"  class="hover:text-brand-600">Services</a>
+      <a href="#skills"    class="hover:text-brand-600">Tools</a>
       <a href="#experience" class="hover:text-brand-600">Experience</a>
-      <a href="#contact"    class="hover:text-brand-600">Contact</a>
+      <a href="#contact"   class="hover:text-brand-600">Contact</a>
     </nav>
 
     <div class="flex items-center gap-3">

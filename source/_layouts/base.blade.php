@@ -15,13 +15,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ $page->siteName }} — Portfolio</title>
-  <meta name="description" content="One-pager websites, hosting & deployments, design/video editing, CRM/ERP setup, and automations.">
+  <meta name="description" content="Forex trader & operator. One-pager sites, hosting & deployments, CRM/ERP automations, and training.">
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🚀</text></svg>'>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <!-- RELATIVE path so it works under /portfolio/ -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body class="bg-neutral-50 text-neutral-900 selection:bg-brand-600/20 dark:bg-neutral-950 dark:text-neutral-100">
   @include('_partials.header')
 
@@ -58,6 +59,28 @@
         });
       }
     });
+  </script>
+
+  <!-- Alpine helper: lightweight carousel -->
+  <script>
+    function carousel({ count, interval = 5000 }) {
+      return {
+        i: 0, count, t: null, startX: null,
+        init(){ this.play() },
+        play(){ this.stop(); this.t = setInterval(()=>this.next(), interval) },
+        stop(){ if (this.t) clearInterval(this.t) },
+        go(n){ this.i = (n + this.count) % this.count; this.play() },
+        next(){ this.go(this.i + 1) },
+        prev(){ this.go(this.i - 1) },
+        onDown(e){ this.startX = (e.touches?.[0] || e).clientX },
+        onUp(e){
+          const endX = (e.changedTouches?.[0] || e).clientX;
+          const dx = endX - (this.startX ?? endX);
+          if (dx > 40) this.prev(); else if (dx < -40) this.next();
+          this.startX = null;
+        }
+      }
+    }
   </script>
 </body>
 </html>
