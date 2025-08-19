@@ -311,7 +311,7 @@
       ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
 
       // Remote & support
-      ['MS Remote Desktop',   null',            '#0078D4'],'MS'],
+      ['MS Remote Desktop',   null,            '#0078D4'],'MS'],
       ['TeamViewer',          'teamviewer',      '#0E8EE9'],
       ['AnyDesk',             'anydesk',         '#EF233C'],
 
