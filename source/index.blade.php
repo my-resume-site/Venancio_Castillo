@@ -274,7 +274,7 @@
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    My stack for planning, trading, dev, ops, automation and content.
+    My stack for planning, trading, dev, ops, integration, automation and content.
   </p>
 
   @php
@@ -286,12 +286,20 @@
       ['ChatGPT / OpenAI',    'openai',          '#10A37F'],
       ['Gamma (AI)',          null,              '#7C3AED', 'GM'],
 
+      // Project & task management
+      ['Trello',              'trello',          '#0079BF'],
+      ['Asana',               'asana',           '#F06A6A'],
+
+      // Automation
+      ['Zapier',              'zapier',          '#FF4A00'],
+
       // Platforms
       ['Google Workspace',    'google',          '#4285F4'],
       ['Microsoft 365',       null,              '#F25022', 'MS'],
 
       // Trading / payments
       ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
+      ['Stripe',              'stripe',          '#635BFF'],
       ['Wise',                'wise',            '#22C55E'],        // green as requested
       ['Payoneer',            'payoneer',        '#FF4800'],
       ['PayPal',              'paypal',          '#00457C'],
@@ -304,6 +312,7 @@
       ['GitHub Actions',      'githubactions',   '#2088FF'],
 
       // Ops / CRM / time
+      ['HighLevel (CRM)',     null,              '#2563EB', 'HL'],
       ['HubSpot',             'hubspot',         '#FF7A59'],
       ['Hubstaff',            null,              '#00AEF0', 'HS'],
       ['Time Doctor',         null,              '#F25A2B', 'TD'],
