@@ -305,21 +305,21 @@
 
       // Ops / CRM / time
       ['HubSpot',             'hubspot',         '#FF7A59'],
-      ['Hubstaff',            'null',            '#00AEF0'],'HS'],
+      ['Hubstaff',            null,            '#00AEF0'],'HS'],
       ['Time Doctor',         null,              '#F25A2B', 'TD'],
       ['Lead gen workflows',  null,              '#A78BFA', 'LG'],
       ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
 
       // Remote & support
-      ['MS Remote Desktop',   'null',            '#0078D4'],'Ms'],
+      ['MS Remote Desktop',   null',            '#0078D4'],'MS'],
       ['TeamViewer',          'teamviewer',      '#0E8EE9'],
       ['AnyDesk',             'anydesk',         '#EF233C'],
 
       // Design / content
-      ['Adobe Photoshop',     'null',            '#31A8FF'],'Ps'],
-      ['Premiere Pro',        'null',            '#9999FF'],'Pr'],
+      ['Adobe Photoshop',     null,            '#31A8FF'],'Ps'],
+      ['Premiere Pro',        null,            '#9999FF'],'Pr'],
       ['Canva',               'canva',           '#00C4CC'],
-      ['CapCut',              'null',            '#111827'],'C'],
+      ['CapCut',              null,            '#111827'],'CC'],
 
     ];
   @endphp
