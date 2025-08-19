@@ -96,28 +96,12 @@
   </div>
 </section>
 
-{{-- PROJECTS (data-driven; works with $page->projects or data('projects')) --}}
+{{-- PROJECTS (data-driven via source/_data/projects.php) --}}
 @php
-  // try both ways Jigsaw can expose _data:
   $projects = [];
-
-  // 1) data('projects') helper (preferred by Jigsaw docs)
-  if (function_exists('data')) {
-    $d = data('projects');
-    if (is_array($d))               { $projects = $d; }
-    elseif (is_object($d) && method_exists($d,'toArray')) { $projects = $d->toArray(); }
-  }
-
-  // 2) $page->projects (sometimes exposed as a Collection)
-  if (!count($projects) && isset($page->projects)) {
-    $d = $page->projects;
-    if (is_array($d))               { $projects = $d; }
-    elseif (is_object($d) && method_exists($d,'toArray')) { $projects = $d->toArray(); }
-  }
-
-  // If someone wrapped items like ['items'=>[...]]
-  if (isset($projects['items']) && is_array($projects['items'])) {
-    $projects = $projects['items'];
+  $dataPath = __DIR__.'/_data/projects.php';
+  if (is_file($dataPath)) {
+      $projects = include $dataPath;   // returns an array
   }
 @endphp
 
@@ -125,7 +109,7 @@
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
 
-  @if (!count($projects))
+  @if (empty($projects))
     <div class="mt-6 rounded-2xl border border-black/10 dark:border-white/10 p-5 text-sm text-neutral-500 dark:text-neutral-400">
       Add items to <code class="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10">source/_data/projects.php</code> to populate this slider.
     </div>
@@ -140,7 +124,10 @@
       @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
     >
       <div class="relative overflow-hidden">
-        <div x-ref="track" class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform">
+        <div
+          x-ref="track"
+          class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
+        >
           @foreach ($projects as $a)
             <article
               class="w-full shrink-0 grid md:grid-cols-2 gap-8 items-center content-center p-6 md:p-8 lg:p-10 min-h-[460px]"
@@ -149,19 +136,23 @@
               <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
                 <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] ?? 'Untitled' }}</h3>
                 <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] ?? '' }}</p>
-                <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] ?? '' }}</div>
+                @if(!empty($a['meta']))
+                  <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
+                @endif
 
-                @if(!empty($a['tags']))
+                @if(!empty($a['tags']) && is_array($a['tags']))
                   <div class="mt-4 flex flex-wrap gap-2">
                     @foreach($a['tags'] as $tag)
-                      <span class="text-xs px-2 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-300">{{ $tag }}</span>
+                      <span class="text-xs px-2 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-300">
+                        {{ $tag }}
+                      </span>
                     @endforeach
                   </div>
                 @endif
 
                 @if(!empty($a['url']))
                   <div class="mt-5">
-                    <a href="{{ $a['url'] }}" target="_blank" rel="noopener" class="text-sm text-brand-600 hover:underline">View case study →</a>
+                    <a href="{{ $a['url'] }}" class="text-sm text-brand-600 hover:underline" target="_blank" rel="noopener">View case study →</a>
                   </div>
                 @endif
               </div>
@@ -180,17 +171,24 @@
         </div>
       </div>
 
-      <button @click="prev()" aria-label="Previous"
-        class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10">‹</button>
-      <button @click="next()" aria-label="Next"
-        class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10">›</button>
+      <!-- Prev / Next -->
+      <button
+        @click="prev()" aria-label="Previous"
+        class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+      >‹</button>
+      <button
+        @click="next()" aria-label="Next"
+        class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+      >›</button>
 
+      <!-- Dots -->
       <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
         <template x-for="(_, idx) in {{ count($projects) }}" :key="idx">
-          <button class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
-                  :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
-                  @click="go(idx)"
-                  :aria-label="`Go to slide ${idx+1}`"></button>
+          <button
+            class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
+            :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
+            @click="go(idx)"
+            :aria-label="`Go to slide ${idx+1}`"></button>
         </template>
       </div>
     </div>
