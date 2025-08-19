@@ -96,101 +96,148 @@
   </div>
 </section>
 
-{{-- PROJECTS (data-driven via source/_data/projects.php) --}}
-@php
-  // Jigsaw injects source/_data/projects.php as $projects
-  $items = $projects ?? [];
-@endphp
-
+{{-- ===== PROJECTS (client-side JSON + Alpine slider) ===== --}}
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
 
-  @if (empty($items))
-    <div class="mt-6 rounded-2xl border border-black/10 dark:border-white/10 p-5 text-sm text-neutral-500 dark:text-neutral-400">
-      Add items to <code class="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10">source/_data/projects.php</code> to populate this slider.
-    </div>
-  @else
-    <div
-      x-data="slider({ count: {{ count($items) }}, interval: 4500 })"
-      x-init="init()"
-      @keydown.left.prevent="prev()" @keydown.right.prevent="next()"
-      tabindex="0"
-      class="mt-8 relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60"
-      @pointerdown="onDown($event)" @pointerup="onUp($event)"
-      @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
-    >
-      <div class="relative overflow-hidden">
-        <div
-          x-ref="track"
-          class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
-        >
-          @foreach ($items as $a)
-            <article
-              class="w-full shrink-0 grid md:grid-cols-2 gap-8 items-center content-center p-6 md:p-8 lg:p-10 min-h-[460px]"
-              aria-roledescription="slide"
-            >
-              <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
-                <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] ?? 'Untitled' }}</h3>
-                <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] ?? '' }}</p>
-                @if(!empty($a['meta']))
-                  <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
-                @endif
-
-                @if(!empty($a['tags']) && is_array($a['tags']))
-                  <div class="mt-4 flex flex-wrap gap-2">
-                    @foreach($a['tags'] as $tag)
-                      <span class="text-xs px-2 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-300">
-                        {{ $tag }}
-                      </span>
-                    @endforeach
-                  </div>
-                @endif
-
-                @if(!empty($a['url']))
-                  <div class="mt-5">
-                    <a href="{{ $a['url'] }}" class="text-sm text-brand-600 hover:underline" target="_blank" rel="noopener">View case study →</a>
-                  </div>
-                @endif
-              </div>
-
-              <div class="order-1 md:order-2 md:justify-self-center">
-                <img
-                  src="{{ $a['img'] ?? '' }}"
-                  alt="{{ $a['title'] ?? '' }}"
-                  width="800" height="600"
-                  class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
-                  loading="lazy"
-                />
-              </div>
-            </article>
-          @endforeach
-        </div>
+  <div
+    x-data="projectsCarousel()"
+    x-init="init()"
+    @keydown.left.prevent="prev()" @keydown.right.prevent="next()"
+    tabindex="0"
+    class="mt-8 relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white/60 dark:bg-neutral-900/60"
+    @pointerdown="onDown($event)" @pointerup="onUp($event)"
+    @touchstart.passive="onDown($event)" @touchend.passive="onUp($event)"
+  >
+    <template x-if="items.length === 0">
+      <div class="p-5 text-sm text-neutral-500 dark:text-neutral-400">
+        Add items below in <code class="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10">#projects-data</code>.
       </div>
+    </template>
 
-      <!-- Prev / Next -->
-      <button
-        @click="prev()" aria-label="Previous"
-        class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-      >‹</button>
-      <button
-        @click="next()" aria-label="Next"
-        class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-      >›</button>
+    <div class="relative overflow-hidden" x-show="items.length">
+      <div
+        x-ref="track"
+        class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
+      >
+        <template x-for="(p, idx) in items" :key="idx">
+          <article
+            class="w-full shrink-0 grid md:grid-cols-2 gap-8 items-center content-center p-6 md:p-8 lg:p-10 min-h-[460px]"
+            aria-roledescription="slide"
+          >
+            <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
+              <h3 class="text-xl md:text-2xl font-semibold" x-text="p.title"></h3>
+              <p class="mt-3 text-neutral-700 dark:text-neutral-300" x-text="p.desc"></p>
+              <template x-if="p.meta">
+                <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400" x-text="p.meta"></div>
+              </template>
 
-      <!-- Dots -->
-      <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
-        <template x-for="(_, idx) in {{ count($items) }}" :key="idx">
-          <button
-            class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
-            :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
-            @click="go(idx)"
-            :aria-label="`Go to slide ${idx+1}`"></button>
+              <template x-if="p.tags && p.tags.length">
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <template x-for="(t, ti) in p.tags" :key="ti">
+                    <span class="text-xs px-2 py-1 rounded-full border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-300" x-text="t"></span>
+                  </template>
+                </div>
+              </template>
+
+              <template x-if="p.url">
+                <div class="mt-5">
+                  <a :href="p.url" class="text-sm text-brand-600 hover:underline" target="_blank" rel="noopener">View case study →</a>
+                </div>
+              </template>
+            </div>
+
+            <div class="order-1 md:order-2 md:justify-self-center">
+              <img
+                :src="p.img"
+                :alt="p.title || ''"
+                width="800" height="600"
+                class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
+                loading="lazy"
+              />
+            </div>
+          </article>
         </template>
       </div>
     </div>
-  @endif
+
+    <!-- Prev / Next -->
+    <button
+      @click="prev()" aria-label="Previous"
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+      x-show="items.length"
+    >‹</button>
+    <button
+      @click="next()" aria-label="Next"
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+      x-show="items.length"
+    >›</button>
+
+    <!-- Dots -->
+    <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2" x-show="items.length">
+      <template x-for="(_, idx) in items" :key="idx">
+        <button
+          class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
+          :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
+          @click="go(idx)"
+          :aria-label="`Go to slide ${idx+1}`"></button>
+      </template>
+    </div>
+  </div>
+
+  <!-- Inline JSON data you can edit -->
+  <script id="projects-data" type="application/json">
+  [
+    {"title":"Project 1","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/1.jpg","url":null,"tags":["Tailwind","CRM","Deploy"]},
+    {"title":"Project 2","desc":"Lead gen funnel","meta":"Ops system","img":"assets/img/projects/2.jpg","url":null,"tags":["Automation","CRM"]},
+    {"title":"Project 3","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/3.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Project 4","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/4.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Project 5","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/5.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Project 6","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/6.jpg","url":null,"tags":["Ops","SOPs"]},
+    {"title":"Project 7","desc":"One-pager + analytics","meta":"Deploy","img":"assets/img/projects/7.jpg","url":null,"tags":["Pages","SEO"]},
+    {"title":"Project 8","desc":"CRM pipeline + automations","meta":"Ops system","img":"assets/img/projects/8.jpg","url":null,"tags":["CRM","Automation"]},
+    {"title":"Project 9","desc":"Training deck & playbook","meta":"COO toolkit","img":"assets/img/projects/9.jpg","url":null,"tags":["Training","Playbooks"]},
+    {"title":"Project 10","desc":"EA backtests bundle","meta":"Forex","img":"assets/img/projects/10.jpg","url":null,"tags":["MT4/5","Backtests"]},
+    {"title":"Project 11","desc":"SaaS landing revamp","meta":"Web","img":"assets/img/projects/11.jpg","url":null,"tags":["Tailwind","Copy"]},
+    {"title":"Project 12","desc":"Creative pack","meta":"Design","img":"assets/img/projects/12.jpg","url":null,"tags":["PS","Premiere"]},
+    {"title":"Project 13","desc":"Ops metrics dashboard","meta":"Ops system","img":"assets/img/projects/13.jpg","url":null,"tags":["KPI","Automation"]},
+    {"title":"Project 14","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/14.jpg","url":null,"tags":["Design","System"]}
+  ]
+  </script>
+
+  <!-- Alpine component for the slider -->
+  <script>
+    function projectsCarousel(){
+      return {
+        items: [],
+        i: 0, t: null, track: null, startX: null,
+        interval: 4500,
+        init(){
+          try {
+            const el = document.getElementById('projects-data');
+            this.items = el ? JSON.parse(el.textContent) : [];
+          } catch(e) { this.items = []; }
+          this.$nextTick(()=>{ this.track = this.$refs.track; this.play(); });
+        },
+        play(){ this.stop(); if(this.items.length>1) this.t = setInterval(()=>this.next(), this.interval); },
+        stop(){ if(this.t) clearInterval(this.t); },
+        go(n){ if(!this.items.length) return; this.i = (n + this.items.length) % this.items.length; this._translate(); this.play(); },
+        next(){ this.go(this.i + 1); },
+        prev(){ this.go(this.i - 1); },
+        _translate(){ if(this.track) this.track.style.transform = `translate3d(-${this.i * 100}%,0,0)`; },
+        onDown(e){ this.startX = (e.touches?.[0] || e).clientX; this.stop(); },
+        onUp(e){
+          const endX = (e.changedTouches?.[0] || e).clientX;
+          const dx = endX - (this.startX ?? endX);
+          if (dx > 40) this.prev(); else if (dx < -40) this.next();
+          this.play(); this.startX = null;
+        }
+      }
+    }
+  </script>
 </section>
+{{-- ===== /PROJECTS ===== --}}
 
 <!-- SERVICES -->
 <section id="services" class="mx-auto max-w-6xl px-4 py-20">
