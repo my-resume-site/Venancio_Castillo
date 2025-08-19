@@ -288,7 +288,7 @@
 
       // Platforms
       ['Google Workspace',    'google',          '#4285F4'],
-      ['Microsoft 365',       'microsoft',       '#F25022'],
+      ['Microsoft 365',       null,              '#F25022', 'MS'],
 
       // Trading / payments
       ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
@@ -311,7 +311,7 @@
       ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
 
       // Remote & support
-      ['MS Remote Desktop',   null,              '#0078D4', 'MS'],
+      ['MS Remote Desktop',   null,              '#0078D4', 'Ms'],
       ['TeamViewer',          'teamviewer',      '#0E8EE9'],
       ['AnyDesk',             'anydesk',         '#EF233C'],
 
@@ -319,7 +319,7 @@
       ['Adobe Photoshop',     null,              '#31A8FF', 'Ps'],
       ['Premiere Pro',        null,              '#9999FF', 'Pr'],
       ['Canva',               'canva',           '#00C4CC'],
-      ['CapCut',              null,              '#111827', 'CC'],
+      ['CapCut',              null,              '#c3ccddff', 'CC'],
 
     ];
   @endphp
