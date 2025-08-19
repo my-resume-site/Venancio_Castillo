@@ -273,27 +273,51 @@
 <!-- TOOLS / SKILLS (logos) -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">My stack for design, dev, hosting, and automation.</p>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">My stack for planning, trading, dev, ops, and content.</p>
 
   @php
+    // Ordered by usability: Daily/AI → Trading → Dev/Hosting → CRM/Ops → Design/Media → Payments → Misc
     $tools = [
+      // Daily & AI
+      ['name'=>'Notion','slug'=>'notion','hex'=>'#111111'],
+      ['name'=>'ClickUp','slug'=>'clickup','hex'=>'#7B68EE'],
+      ['name'=>'ChatGPT / OpenAI','slug'=>'openai','hex'=>'#10A37F'],
+      ['name'=>'Gamma (AI)','slug'=>null,'abbr'=>'GM','hex'=>'#6E56CF'],
+      ['name'=>'Google Workspace','slug'=>'google','hex'=>'#4285F4'],
+      ['name'=>'Microsoft 365','slug'=>'microsoft','hex'=>'#F25022'],
+
+      // Trading
+      ['name'=>'MetaTrader 4/5','slug'=>null,'abbr'=>'MT','hex'=>'#6EE7B7'],
+
+      // Dev & Hosting
       ['name'=>'Tailwind','slug'=>'tailwindcss','hex'=>'#06B6D4'],
       ['name'=>'Alpine.js','slug'=>'alpinedotjs','hex'=>'#77C1D2'],
       ['name'=>'Laravel / Blade','slug'=>'laravel','hex'=>'#FF2D20'],
       ['name'=>'Node.js','slug'=>'nodedotjs','hex'=>'#339933'],
       ['name'=>'GitHub Actions','slug'=>'githubactions','hex'=>'#2088FF'],
       ['name'=>'DigitalOcean','slug'=>'digitalocean','hex'=>'#0080FF'],
-      ['name'=>'Google Workspace','slug'=>'google','hex'=>'#4285F4'],
-      ['name'=>'Microsoft 365','slug'=>'microsoft','hex'=>'#F25022'],
 
-      /* Adobe via Iconify (more reliable than simpleicons CDN) */
+      // CRM, Ops & Support
+      ['name'=>'HubSpot','slug'=>'hubspot','hex'=>'#FF7A59'],
+      ['name'=>'Hubstaff','slug'=>'hubstaff','hex'=>'#00AEF0'],
+      ['name'=>'Time Doctor','slug'=>'timedoctor','hex'=>'#F05A28'],
+      ['name'=>'Zendesk','slug'=>'zendesk','hex'=>'#17494D'],
+      ['name'=>'Microsoft Access','slug'=>'microsoftaccess','hex'=>'#A4373A'],
+      ['name'=>'MS Remote Desktop','slug'=>null,'abbr'=>'RD','hex'=>'#D83B01'],
+      ['name'=>'TeamViewer','slug'=>'teamviewer','hex'=>'#0E8EE9'],
+
+      // Design & Media
       ['name'=>'Adobe Photoshop','slug'=>'adobephotoshop','hex'=>'#31A8FF'],
       ['name'=>'Premiere Pro','slug'=>'adobepremierepro','hex'=>'#9999FF'],
-
+      ['name'=>'CapCut','slug'=>'capcut','hex'=>'#000000'],
       ['name'=>'Canva','slug'=>'canva','hex'=>'#00C4CC'],
+      ['name'=>'Wwise','slug'=>null,'abbr'=>'Ww','hex'=>'#0055CC'],
 
-      /* No brand icon? show a neat monogram tile */
-      ['name'=>'MetaTrader 4/5','slug'=>null,'abbr'=>'MT','hex'=>'#6EE7B7'],
+      // Payments
+      ['name'=>'PayPal','slug'=>'paypal','hex'=>'#003087'],
+      ['name'=>'Payoneer','slug'=>'payoneer','hex'=>'#FF4800'],
+
+      // Misc ops
       ['name'=>'Lead gen workflows','slug'=>null,'abbr'=>'LG','hex'=>'#A78BFA'],
       ['name'=>'CRM/ERP config','slug'=>null,'abbr'=>'CE','hex'=>'#F59E0B'],
     ];
