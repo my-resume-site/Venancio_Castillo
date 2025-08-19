@@ -4,3 +4,7 @@
 /build_local
 /build_production
 .DS_Store
+
+# macOS
+.DS_Store
+**/.DS_Store
