@@ -11,6 +11,11 @@
       <a href="#skills"     class="hover:text-brand-600">Tools</a>
       <a href="#experience" class="hover:text-brand-600">Experience</a>
       <a href="#contact"    class="hover:text-brand-600">Contact</a>
+      <!-- Résumé (opens/downloads PDF from /assets/docs/resume.pdf) -->
+      <a href="assets/docs/resume.pdf"
+         download="Venancio_Castillo_Resume.pdf"
+         target="_blank" rel="noopener"
+         class="hover:text-brand-600">Résumé</a>
     </nav>
 
     <div class="flex items-center gap-3">

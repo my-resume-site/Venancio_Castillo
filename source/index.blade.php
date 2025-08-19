@@ -20,6 +20,13 @@
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Start a project</a>
           <a href="#forex" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Forex spotlight</a>
+          <!-- Résumé button restored -->
+          <a href="assets/docs/resume.pdf"
+             download="Venancio_Castillo_Resume.pdf"
+             target="_blank" rel="noopener"
+             class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">
+            Download résumé (PDF)
+          </a>
         </div>
       </div>
 
@@ -91,7 +98,7 @@
 
 <!-- PROJECTS: 14-slide GPU slider (no flicker) -->
 @php
-  // Place images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
+  // Images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
   $projects = [];
   for ($n=1; $n<=14; $n++) {
     $projects[] = [
@@ -202,7 +209,7 @@
   </div>
 </section>
 
-<!-- TOOLS / SKILLS (logos) -->
+<!-- TOOLS / SKILLS -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">My stack for design, dev, hosting, and automation.</p>
