@@ -112,7 +112,7 @@
 
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A ssneak peak at shipped work and systems.</p>
 
   <div
     x-data="slider({ count: {{ count($projects) }}, interval: 4500 })"
@@ -130,26 +130,28 @@
       >
         @foreach ($projects as $a)
           <article
-            class="w-full shrink-0 grid md:grid-cols-2 gap-6 items-center p-4 md:p-6 lg:p-10 min-h-[380px]"
+          class="w-full shrink-0 grid md:grid-cols-2 gap-8
+         items-center content-center
+         p-6 md:p-8 lg:p-10 min-h-[460px]"
             aria-roledescription="slide"
-          >
-            <div class="order-2 md:order-1">
-              <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
-              <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
-              <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
-            </div>
+>
+            <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
+            <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
+            <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
+            <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
+          </div>
 
-            <div class="order-1 md:order-2">
-              <img
-                src="{{ $a['img'] }}"
-                srcset="{{ $a['img'] }} 1600w"
-                sizes="(min-width: 768px) 576px, 100vw"
-                alt="{{ $a['title'] }}"
-                width="800" height="600"
-                class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
-                loading="lazy"
-              />
-            </div>
+            <div class="order-1 md:order-2 md:justify-self-center">
+            <img
+              src="{{ $a['img'] }}"
+              srcset="{{ $a['img'] }} 1600w"
+              sizes="(min-width: 768px) 576px, 100vw"
+              alt="{{ $a['title'] }}"
+              width="800" height="600"
+              class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
+              loading="lazy"
+            />
+          </div>
           </article>
         @endforeach
       </div>
