@@ -98,24 +98,21 @@
 
 {{-- PROJECTS (data-driven via source/_data/projects.php) --}}
 @php
-  $projects = [];
-  $dataPath = __DIR__.'/_data/projects.php';
-  if (is_file($dataPath)) {
-      $projects = include $dataPath;   // returns an array
-  }
+  // Jigsaw injects source/_data/projects.php as $projects
+  $items = $projects ?? [];
 @endphp
 
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
 
-  @if (empty($projects))
+  @if (empty($items))
     <div class="mt-6 rounded-2xl border border-black/10 dark:border-white/10 p-5 text-sm text-neutral-500 dark:text-neutral-400">
       Add items to <code class="px-1 py-0.5 rounded bg-black/5 dark:bg-white/10">source/_data/projects.php</code> to populate this slider.
     </div>
   @else
     <div
-      x-data="slider({ count: {{ count($projects) }}, interval: 4500 })"
+      x-data="slider({ count: {{ count($items) }}, interval: 4500 })"
       x-init="init()"
       @keydown.left.prevent="prev()" @keydown.right.prevent="next()"
       tabindex="0"
@@ -128,7 +125,7 @@
           x-ref="track"
           class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
         >
-          @foreach ($projects as $a)
+          @foreach ($items as $a)
             <article
               class="w-full shrink-0 grid md:grid-cols-2 gap-8 items-center content-center p-6 md:p-8 lg:p-10 min-h-[460px]"
               aria-roledescription="slide"
@@ -183,7 +180,7 @@
 
       <!-- Dots -->
       <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
-        <template x-for="(_, idx) in {{ count($projects) }}" :key="idx">
+        <template x-for="(_, idx) in {{ count($items) }}" :key="idx">
           <button
             class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
             :class="i===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
