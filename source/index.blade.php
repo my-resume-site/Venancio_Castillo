@@ -270,43 +270,56 @@
   </div>
 </section>
 
-<!-- TOOLS / SKILLS -->
+<!-- TOOLS / SKILLS (logos) -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">My stack for design, dev, hosting, and automation.</p>
 
   @php
     $tools = [
-      ['Tailwind','tailwindcss','#06B6D4'],
-      ['Alpine.js','alpinedotjs','#77C1D2'],
-      ['Laravel / Blade','laravel','#FF2D20'],
-      ['Node.js','nodedotjs','#339933'],
-      ['GitHub Actions','githubactions','#2088FF'],
-      ['DigitalOcean','digitalocean','#0080FF'],
-      ['Google Workspace','google','#4285F4'],
-      ['Microsoft 365','microsoft','#F25022'],
-      ['Adobe Photoshop','adobephotoshop','#31A8FF'],
-      ['Premiere Pro','adobepremierepro','#9999FF'],
-      ['Canva','canva','#00C4CC'],
-      ['MetaTrader 4/5',null,'#6EE7B7'],
-      ['Lead gen workflows',null,'#A78BFA'],
-      ['CRM/ERP config',null,'#F59E0B'],
+      ['name'=>'Tailwind','slug'=>'tailwindcss','hex'=>'#06B6D4'],
+      ['name'=>'Alpine.js','slug'=>'alpinedotjs','hex'=>'#77C1D2'],
+      ['name'=>'Laravel / Blade','slug'=>'laravel','hex'=>'#FF2D20'],
+      ['name'=>'Node.js','slug'=>'nodedotjs','hex'=>'#339933'],
+      ['name'=>'GitHub Actions','slug'=>'githubactions','hex'=>'#2088FF'],
+      ['name'=>'DigitalOcean','slug'=>'digitalocean','hex'=>'#0080FF'],
+      ['name'=>'Google Workspace','slug'=>'google','hex'=>'#4285F4'],
+      ['name'=>'Microsoft 365','slug'=>'microsoft','hex'=>'#F25022'],
+
+      /* Adobe via Iconify (more reliable than simpleicons CDN) */
+      ['name'=>'Adobe Photoshop','slug'=>'adobephotoshop','hex'=>'#31A8FF'],
+      ['name'=>'Premiere Pro','slug'=>'adobepremierepro','hex'=>'#9999FF'],
+
+      ['name'=>'Canva','slug'=>'canva','hex'=>'#00C4CC'],
+
+      /* No brand icon? show a neat monogram tile */
+      ['name'=>'MetaTrader 4/5','slug'=>null,'abbr'=>'MT','hex'=>'#6EE7B7'],
+      ['name'=>'Lead gen workflows','slug'=>null,'abbr'=>'LG','hex'=>'#A78BFA'],
+      ['name'=>'CRM/ERP config','slug'=>null,'abbr'=>'CE','hex'=>'#F59E0B'],
     ];
   @endphp
 
   <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    @foreach ($tools as [$name,$slug,$hex])
-      <div class="group flex items-center gap-3 rounded-xl border px-3 py-2 bg-white/70 dark:bg-neutral-900/70
-                  border-black/10 dark:border-white/10 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
-           style="box-shadow: 0 0 0 1px {{ $hex }}22 inset;">
-        @if ($slug)
-          <img src="https://cdn.simpleicons.org/{{ $slug }}/ffffff" alt="{{ $name }} logo"
-               class="h-5 w-5 rounded" style="background-color: {{ $hex }}" loading="lazy" />
+    @foreach ($tools as $t)
+      <div class="group flex items-center gap-3 rounded-xl border px-3 py-2
+                  bg-white/70 dark:bg-neutral-900/70 border-black/10 dark:border-white/10
+                  hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+           style="box-shadow: 0 0 0 1px {{ $t['hex'] }}22 inset;">
+        @if (!empty($t['slug']))
+          <img
+            src="https://api.iconify.design/simple-icons/{{ $t['slug'] }}.svg?color=white"
+            alt="{{ $t['name'] }} logo"
+            class="h-5 w-5 rounded"
+            style="background-color: {{ $t['hex'] }}"
+            loading="lazy"
+          />
         @else
-          <div class="h-5 w-5 grid place-items-center rounded text-sm"
-               style="background-color: {{ $hex }}; color: #0b1220">📈</div>
+          <div class="h-5 w-5 grid place-items-center rounded text-[10px] font-semibold"
+               style="background-color: {{ $t['hex'] }}; color: #0b1220">
+            {{ $t['abbr'] ?? '•' }}
+          </div>
         @endif
-        <span class="text-sm text-neutral-800 dark:text-neutral-200">{{ $name }}</span>
+        <span class="text-sm text-neutral-800 dark:text-neutral-200">{{ $t['name'] }}</span>
       </div>
     @endforeach
   </div>
