@@ -96,23 +96,15 @@
   </div>
 </section>
 
-<!-- PROJECTS: 14-slide GPU slider (no flicker) -->
+{{-- PROJECTS: editable items loaded from source/_data/projects.php --}}
 @php
-  // Images at: source/assets/img/projects/1.jpg … 14.jpg (1600×1200 recommended)
-  $projects = [];
-  for ($n=1; $n<=14; $n++) {
-    $projects[] = [
-      'title' => "Project $n",
-      'desc'  => 'Web / Ops / Design',
-      'img'   => "assets/img/projects/$n.jpg",
-      'meta'  => 'Case study'
-    ];
-  }
+  /** @var array $projects */
+  $projects = $page->projects ?? [];   // Jigsaw exposes _data/projects.php as $page->projects
 @endphp
 
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A ssneak peak at shipped work and systems.</p>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
 
   <div
     x-data="slider({ count: {{ count($projects) }}, interval: 4500 })"
@@ -129,45 +121,69 @@
         class="flex transition-transform duration-500 ease-[cubic-bezier(.22,.61,.36,1)] will-change-transform"
       >
         @foreach ($projects as $a)
-          <article
-          class="w-full shrink-0 grid md:grid-cols-2 gap-8
-         items-center content-center
-         p-6 md:p-8 lg:p-10 min-h-[460px]"
-            aria-roledescription="slide"
->
-            <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
-            <h3 class="text-xl md:text-2xl font-semibold">{{ $a['title'] }}</h3>
-            <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $a['desc'] }}</p>
-            <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $a['meta'] }}</div>
-          </div>
+          @php
+            $title = $a['title'] ?? 'Untitled';
+            $desc  = $a['desc']  ?? '';
+            $meta  = $a['meta']  ?? '';
+            $img   = $a['img']   ?? '';
+            $url   = $a['url']   ?? null;
+            $tags  = $a['tags']  ?? [];
+          @endphp
 
+          <article
+            class="w-full shrink-0 grid md:grid-cols-2 gap-8
+                   items-center content-center
+                   p-6 md:p-8 lg:p-10 min-h-[460px]"
+            aria-roledescription="slide"
+          >
+            {{-- Left: text, stays left-aligned but block centered in column --}}
+            <div class="order-2 md:order-1 md:justify-self-center self-center text-left max-w-xl w-full">
+              <h3 class="text-xl md:text-2xl font-semibold">{{ $title }}</h3>
+              @if ($desc)
+                <p class="mt-3 text-neutral-700 dark:text-neutral-300">{{ $desc }}</p>
+              @endif
+              @if (!empty($tags))
+                <div class="mt-3 flex flex-wrap gap-2">
+                  @foreach ($tags as $t)
+                    <span class="text-[11px] rounded-full border border-black/10 dark:border-white/10 px-2 py-1
+                                 bg-white/70 dark:bg-neutral-900/70">{{ $t }}</span>
+                  @endforeach
+                </div>
+              @endif
+              <div class="mt-4 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">{{ $meta }}</div>
+              @if ($url)
+                <a href="{{ $url }}" target="_blank" rel="noopener"
+                   class="mt-4 inline-flex rounded-xl border border-black/10 dark:border-white/10 px-3 py-2 text-xs
+                          hover:bg-black/5 dark:hover:bg-white/10">View case study ↗</a>
+              @endif
+            </div>
+
+            {{-- Right: image --}}
             <div class="order-1 md:order-2 md:justify-self-center">
-            <img
-              src="{{ $a['img'] }}"
-              srcset="{{ $a['img'] }} 1600w"
-              sizes="(min-width: 768px) 576px, 100vw"
-              alt="{{ $a['title'] }}"
-              width="800" height="600"
-              class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
-              loading="lazy"
-            />
-          </div>
+              <img
+                src="{{ $img }}"
+                alt="{{ $title }}"
+                width="800" height="600"
+                class="w-full aspect-[4/3] object-cover rounded-xl border border-black/10 dark:border-white/10 shadow"
+                loading="lazy"
+              />
+            </div>
           </article>
         @endforeach
       </div>
     </div>
 
-    <!-- Prev / Next -->
+    {{-- Prev / Next --}}
     <button
       @click="prev()" aria-label="Previous"
-      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-    >‹</button>
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10
+             bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10">‹</button>
     <button
       @click="next()" aria-label="Next"
-      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10 bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-    >›</button>
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 dark:border-white/10
+             bg-white/70 dark:bg-neutral-900/70 px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10">›</button>
 
-    <!-- Dots -->
+    {{-- Dots --}}
     <div class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2">
       <template x-for="(_, idx) in {{ count($projects) }}" :key="idx">
         <button
