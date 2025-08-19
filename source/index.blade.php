@@ -300,12 +300,14 @@
       // Trading / payments
       ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
       ['Stripe',              'stripe',          '#635BFF'],
-      ['Wise',                'wise',            '#22C55E'],        // green as requested
+      ['Wise',                'wise',            '#22C55E'],        
       ['Payoneer',            'payoneer',        '#FF4800'],
       ['PayPal',              'paypal',          '#00457C'],
 
       // Dev
-      ['DigitalOcean',        'digitalocean',    '#0080FF'], 
+      ['DigitalOcean',        'digitalocean',    '#0080FF'],
+      ['Laravel',             'laravel',         '#FF2D20'],    
+      ['Laravel Herd',        null,              '#FF2D20', 'LH'],
       ['Tailwind',            'tailwindcss',     '#06B6D4'],
       ['Alpine.js',           'alpinedotjs',     '#77C1D2'],
       ['Node.js',             'nodedotjs',       '#339933'],
