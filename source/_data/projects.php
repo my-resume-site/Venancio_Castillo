@@ -1,16 +1,13 @@
 <?php
-// source/_data/projects.php
-// Edit anything below — add/remove items, change order, etc.
-
+// Each item = one slide. Put your images in source/assets/img/projects/ (1.jpg … 14.jpg)
 return [
   [
     'title' => 'Project 1',
     'desc'  => 'Web / Ops / Design',
     'meta'  => 'Case study',
     'img'   => 'assets/img/projects/1.jpg',
-    // Optional:
-    'url'   => null,        // 'https://…' if you have a case study
-    'tags'  => ['Tailwind','CRM','Deploy']
+    'url'   => null,               // or 'https://…' if you have a case study
+    'tags'  => ['Tailwind','CRM','Deploy'],
   ],
   [
     'title' => 'Project 2',
@@ -18,102 +15,102 @@ return [
     'meta'  => 'Ops system',
     'img'   => 'assets/img/projects/2.jpg',
     'url'   => null,
-    'tags'  => ['Automation','CRM']
+    'tags'  => ['Automation','CRM'],
   ],
-   [
+  [
     'title' => 'Project 3',
     'desc'  => 'Brand + site refresh',
     'meta'  => 'Design system',
     'img'   => 'assets/img/projects/3.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Design','Web'],
   ],
-   [
+  [
     'title' => 'Project 4',
     'desc'  => 'Brand + site refresh',
     'meta'  => 'Design system',
     'img'   => 'assets/img/projects/4.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Design','Web'],
   ],
-   [
+  [
     'title' => 'Project 5',
     'desc'  => 'Brand + site refresh',
     'meta'  => 'Design system',
     'img'   => 'assets/img/projects/5.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Design','Web'],
   ],
-   [
+  [
     'title' => 'Project 6',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'Web / Ops / Design',
+    'meta'  => 'Case study',
     'img'   => 'assets/img/projects/6.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Ops','SOPs'],
   ],
-   [
+  [
     'title' => 'Project 7',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'One-pager + analytics',
+    'meta'  => 'Deploy',
     'img'   => 'assets/img/projects/7.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Pages','SEO'],
   ],
-   [
+  [
     'title' => 'Project 8',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'CRM pipeline + automations',
+    'meta'  => 'Ops system',
     'img'   => 'assets/img/projects/8.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['CRM','Automation'],
   ],
-   [
+  [
     'title' => 'Project 9',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'Training deck & playbook',
+    'meta'  => 'COO toolkit',
     'img'   => 'assets/img/projects/9.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Training','Playbooks'],
   ],
-   [
+  [
     'title' => 'Project 10',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'EA backtests bundle',
+    'meta'  => 'Forex',
     'img'   => 'assets/img/projects/10.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['MT4/5','Backtests'],
   ],
-   [
+  [
     'title' => 'Project 11',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'SaaS landing revamp',
+    'meta'  => 'Web',
     'img'   => 'assets/img/projects/11.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Tailwind','Copy'],
   ],
-   [
+  [
     'title' => 'Project 12',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'Creative pack',
+    'meta'  => 'Design',
     'img'   => 'assets/img/projects/12.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['PS','Premiere'],
   ],
-   [
+  [
     'title' => 'Project 13',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'Ops metrics dashboard',
+    'meta'  => 'Ops system',
     'img'   => 'assets/img/projects/13.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['KPI','Automation'],
   ],
   [
     'title' => 'Project 14',
-    'desc'  => 'Brand + site refresh',
-    'meta'  => 'Design system',
+    'desc'  => 'Brand kit & style tiles',
+    'meta'  => 'Design',
     'img'   => 'assets/img/projects/14.jpg',
     'url'   => null,
-    'tags'  => ['Design','Web']
+    'tags'  => ['Design','System'],
   ],
 ];
