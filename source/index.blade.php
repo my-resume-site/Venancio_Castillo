@@ -292,7 +292,7 @@
 
       // Trading / payments
       ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
-      ['Wise',                'wise',            '#9fe870'],        // green as requested
+      ['Wise',                'wise',            '#22C55E'],        // green as requested
       ['Payoneer',            'payoneer',        '#FF4800'],
       ['PayPal',              'paypal',          '#00457C'],
 
@@ -305,21 +305,21 @@
 
       // Ops / CRM / time
       ['HubSpot',             'hubspot',         '#FF7A59'],
-      ['Hubstaff',            'hubstaff',        '#00AEF0'],
+      ['Hubstaff',            'null',            '#00AEF0'],'HS'],
       ['Time Doctor',         null,              '#F25A2B', 'TD'],
       ['Lead gen workflows',  null,              '#A78BFA', 'LG'],
       ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
 
       // Remote & support
-      ['MS Remote Desktop',   'windows',         '#0078D4'],
+      ['MS Remote Desktop',   'null',            '#0078D4'],'Ms'],
       ['TeamViewer',          'teamviewer',      '#0E8EE9'],
       ['AnyDesk',             'anydesk',         '#EF233C'],
 
       // Design / content
-      ['Adobe Photoshop',     'adobephotoshop',  '#31A8FF'],
-      ['Premiere Pro',        'adobepremierepro','#9999FF'],
+      ['Adobe Photoshop',     'null',            '#31A8FF'],'Ps'],
+      ['Premiere Pro',        'null',            '#9999FF'],'Pr'],
       ['Canva',               'canva',           '#00C4CC'],
-      ['CapCut',              'capcut',          '#111827'],
+      ['CapCut',              'null',            '#111827'],'C'],
 
     ];
   @endphp
