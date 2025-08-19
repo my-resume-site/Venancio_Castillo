@@ -189,20 +189,23 @@
   <!-- Inline JSON data you can edit -->
   <script id="projects-data" type="application/json">
   [
-    {"title":"Project 1","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/1.jpg","url":null,"tags":["Tailwind","CRM","Deploy"]},
-    {"title":"Project 2","desc":"Lead gen funnel","meta":"Ops system","img":"assets/img/projects/2.jpg","url":null,"tags":["Automation","CRM"]},
-    {"title":"Project 3","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/3.jpg","url":null,"tags":["Design","Web"]},
-    {"title":"Project 4","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/4.jpg","url":null,"tags":["Design","Web"]},
-    {"title":"Project 5","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/5.jpg","url":null,"tags":["Design","Web"]},
-    {"title":"Project 6","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/6.jpg","url":null,"tags":["Ops","SOPs"]},
-    {"title":"Project 7","desc":"One-pager + analytics","meta":"Deploy","img":"assets/img/projects/7.jpg","url":null,"tags":["Pages","SEO"]},
-    {"title":"Project 8","desc":"CRM pipeline + automations","meta":"Ops system","img":"assets/img/projects/8.jpg","url":null,"tags":["CRM","Automation"]},
-    {"title":"Project 9","desc":"Training deck & playbook","meta":"COO toolkit","img":"assets/img/projects/9.jpg","url":null,"tags":["Training","Playbooks"]},
-    {"title":"Project 10","desc":"EA backtests bundle","meta":"Forex","img":"assets/img/projects/10.jpg","url":null,"tags":["MT4/5","Backtests"]},
-    {"title":"Project 11","desc":"SaaS landing revamp","meta":"Web","img":"assets/img/projects/11.jpg","url":null,"tags":["Tailwind","Copy"]},
-    {"title":"Project 12","desc":"Creative pack","meta":"Design","img":"assets/img/projects/12.jpg","url":null,"tags":["PS","Premiere"]},
-    {"title":"Project 13","desc":"Ops metrics dashboard","meta":"Ops system","img":"assets/img/projects/13.jpg","url":null,"tags":["KPI","Automation"]},
-    {"title":"Project 14","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/14.jpg","url":null,"tags":["Design","System"]}
+    {"title":"Hubstaff Documentaion","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/1.jpg","url":null,"tags":["Tailwind","CRM","Deploy"]},
+    {"title":"Performance Evaluation","desc":"Lead gen funnel","meta":"Ops system","img":"assets/img/projects/2.jpg","url":null,"tags":["Automation","CRM"]},
+    {"title":"Author Pitch Deck","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/3.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Author Guidelines","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/4.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Digital Marketing","desc":"Brand + site refresh","meta":"Design system","img":"assets/img/projects/5.jpg","url":null,"tags":["Design","Web"]},
+    {"title":"Business Outlook","desc":"Web / Ops / Design","meta":"Case study","img":"assets/img/projects/6.jpg","url":null,"tags":["Ops","SOPs"]},
+    {"title":"Business Proposal","desc":"One-pager + analytics","meta":"Deploy","img":"assets/img/projects/7.jpg","url":null,"tags":["Pages","SEO"]},
+    {"title":"Event Flyering","desc":"CRM pipeline + automations","meta":"Ops system","img":"assets/img/projects/8.jpg","url":null,"tags":["CRM","Automation"]},
+    {"title":"Graphic Design Options","desc":"Training deck & playbook","meta":"COO toolkit","img":"assets/img/projects/9.jpg","url":null,"tags":["Training","Playbooks"]},
+    {"title":"Seasonal Project","desc":"EA backtests bundle","meta":"Forex","img":"assets/img/projects/10.jpg","url":null,"tags":["MT4/5","Backtests"]},
+    {"title":"Character Dossier","desc":"SaaS landing revamp","meta":"Web","img":"assets/img/projects/11.jpg","url":null,"tags":["Tailwind","Copy"]},
+    {"title":"Character Dossier","desc":"Creative pack","meta":"Design","img":"assets/img/projects/12.jpg","url":null,"tags":["PS","Premiere"]},
+    {"title":"COC Creation","desc":"Ops metrics dashboard","meta":"Ops system","img":"assets/img/projects/13.jpg","url":null,"tags":["KPI","Automation"]},
+    {"title":"Sales Training","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/14.jpg","url":null,"tags":["Design","System"]},
+    {"title":"MT4 Custom Indicators","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/15.jpg","url":null,"tags":["Trading","System"]},
+    {"title":"MT4 Custom Indicators","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/16.jpg","url":null,"tags":["Trading","System"]},
+    {"title":"MT4 Custom EAs","desc":"Brand kit & style tiles","meta":"Design","img":"assets/img/projects/17.jpg","url":null,"tags":["Trading","System"]}
   ]
   </script>
 
