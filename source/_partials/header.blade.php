@@ -9,7 +9,7 @@
       <a href="#projects"   class="hover:text-brand-600">Projects</a>
       <a href="#services"   class="hover:text-brand-600">Services</a>
       <a href="#skills"     class="hover:text-brand-600">Tools</a>
-      <a href="#experience" class="hover:text-brand-600">Experience</a>
+      <a href="#experience" class="hover:text-brand-600">Mission</a>
       <a href="#contact"    class="hover:text-brand-600">Contact</a>
       <!-- Résumé (opens/downloads PDF from /assets/docs/resume.pdf) -->
       <!-- <a href="assets/docs/resume.pdf"
