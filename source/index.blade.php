@@ -113,6 +113,55 @@
   </div>
 </section>
 
+<!-- MISSION / VISION / HOW I CAN HELP -->
+<section id="experience" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Mission, vision & how I can help</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+    A clear purpose, a calm process, and support that feels personal.
+  </p>
+
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Mission -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">Mission</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        Help small teams and solo founders win back time and trust by building lean systems—
+        clear websites, dependable automations, and disciplined trading routines that put
+        results (not noise) first.
+      </p>
+    </article>
+
+    <!-- Vision -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">Vision</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        A calm, resilient business where operations run smoothly, clients feel cared for,
+        and decisions are guided by data—not guesswork—with room for people to do their best work.
+      </p>
+    </article>
+
+    <!-- How I can help -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">How I can help</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        I have sat as (COO), trained sales and support teams, and built
+        practical tools—webpages, CRM/ERP flows, and MT4/5 EAs. I will listen first, design
+        a simple plan, and ship improvements you can feel: faster pages, clearer workflows,
+        and a repeatable trading/process rhythm you can trust.
+      </p>
+      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+        <li>One-pager sites that explain and convert</li>
+        <li>CRM/ERP workflows & light automations</li>
+        <li>Training, SOPs, and hand-off docs your team will use</li>
+      </ul>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Let us work together</a>
+        <a href="mailto:{{ $page->email }}" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Email me</a>
+      </div>
+    </article>
+  </div>
+</section>
+
 {{-- ===== PROJECTS (client-side JSON + Alpine slider) ===== --}}
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
   <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
@@ -258,6 +307,102 @@
   </script>
 </section>
 {{-- ===== /PROJECTS ===== --}}
+
+<!-- TOOLS / SKILLS (logos) -->
+<section id="skills" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+    My stack for planning, trading, dev, ops, integration, automation and content.
+  </p>
+
+  @php
+    // Order roughly by day-to-day usability / frequency
+    $tools = [
+      // Planning / AI
+      ['Notion',              'notion',          '#000000'],
+      ['ClickUp',             'clickup',         '#7C3AED'],
+      ['ChatGPT / OpenAI',    'openai',          '#10A37F'],
+      ['Gamma (AI)',          null,              '#7C3AED', 'GM'],
+
+      // Project & task management
+      ['Trello',              'trello',          '#0079BF'],
+      ['Asana',               'asana',           '#F06A6A'],
+
+      // Automation
+      ['Zapier',              'zapier',          '#FF4A00'],
+
+      // Platforms
+      ['Google Workspace',    'google',          '#4285F4'],
+      ['Microsoft 365',       null,              '#F25022', 'MS'],
+
+      // Trading / payments
+      ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
+      ['Stripe',              'stripe',          '#635BFF'],
+      ['Wise',                'wise',            '#22C55E'],        
+      ['Payoneer',            'payoneer',        '#FF4800'],
+      ['PayPal',              'paypal',          '#00457C'],
+
+      // Dev
+      ['DigitalOcean',        'digitalocean',    '#0080FF'],
+      ['Laravel',             'laravel',         '#FF2D20'],    
+      ['Laravel Herd',        null,              '#FF2D20', 'LH'],
+      ['Tailwind',            'tailwindcss',     '#06B6D4'],
+      ['Alpine.js',           'alpinedotjs',     '#77C1D2'],
+      ['Node.js',             'nodedotjs',       '#339933'],
+      ['GitHub Actions',      'githubactions',   '#2088FF'],
+
+      // Ops / CRM / time
+      ['HighLevel (CRM)',     null,              '#2563EB', 'HL'],
+      ['HubSpot',             'hubspot',         '#FF7A59'],
+      ['Hubstaff',            null,              '#00AEF0', 'HS'],
+      ['Time Doctor',         null,              '#F25A2B', 'TD'],
+      ['Lead gen workflows',  null,              '#A78BFA', 'LG'],
+      ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
+
+      // Remote & support
+      ['MS Remote Desktop',   null,              '#0078D4', 'Ms'],
+      ['TeamViewer',          'teamviewer',      '#0E8EE9'],
+      ['AnyDesk',             'anydesk',         '#EF233C'],
+
+      // Design / content
+      ['Adobe Photoshop',     null,              '#31A8FF', 'Ps'],
+      ['Premiere Pro',        null,              '#9999FF', 'Pr'],
+      ['Canva',               'canva',           '#00C4CC'],
+      ['CapCut',              null,              '#c3ccddff', 'CC'],
+
+    ];
+  @endphp
+
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    @foreach ($tools as $t)
+      @php
+        [$name, $slug, $hex, $fallback] = [$t[0], $t[1] ?? null, $t[2] ?? '#e5e7eb', $t[3] ?? null];
+      @endphp
+      <div
+        class="group flex items-center gap-3 rounded-xl border px-3 py-2
+               bg-white/70 dark:bg-neutral-900/70 border-black/10 dark:border-white/10
+               hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+        style="box-shadow: 0 0 0 1px {{ $hex }}22 inset;"
+      >
+        @if ($slug)
+          <img
+            src="https://cdn.simpleicons.org/{{ $slug }}/ffffff"
+            alt="{{ $name }} logo"
+            class="h-5 w-5 rounded"
+            style="background-color: {{ $hex }}"
+            loading="lazy"
+          />
+        @else
+          <div class="h-5 w-5 grid place-items-center rounded text-[10px] font-semibold"
+               style="background-color: {{ $hex }}; color: #0b1220">
+            {{ $fallback ?? '•' }}
+          </div>
+        @endif
+        <span class="text-sm text-neutral-800 dark:text-neutral-200">{{ $name }}</span>
+      </div>
+    @endforeach
+  </div>
+</section>
 
 <!-- SERVICES — responsive card slider (Alpine + scroll-snap) -->
 <section id="services" class="mx-auto max-w-6xl px-4 py-20">
@@ -414,151 +559,6 @@
       }
     }
   </script>
-</section>
-
-<!-- TOOLS / SKILLS (logos) -->
-<section id="skills" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Tools I use</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    My stack for planning, trading, dev, ops, integration, automation and content.
-  </p>
-
-  @php
-    // Order roughly by day-to-day usability / frequency
-    $tools = [
-      // Planning / AI
-      ['Notion',              'notion',          '#000000'],
-      ['ClickUp',             'clickup',         '#7C3AED'],
-      ['ChatGPT / OpenAI',    'openai',          '#10A37F'],
-      ['Gamma (AI)',          null,              '#7C3AED', 'GM'],
-
-      // Project & task management
-      ['Trello',              'trello',          '#0079BF'],
-      ['Asana',               'asana',           '#F06A6A'],
-
-      // Automation
-      ['Zapier',              'zapier',          '#FF4A00'],
-
-      // Platforms
-      ['Google Workspace',    'google',          '#4285F4'],
-      ['Microsoft 365',       null,              '#F25022', 'MS'],
-
-      // Trading / payments
-      ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
-      ['Stripe',              'stripe',          '#635BFF'],
-      ['Wise',                'wise',            '#22C55E'],        
-      ['Payoneer',            'payoneer',        '#FF4800'],
-      ['PayPal',              'paypal',          '#00457C'],
-
-      // Dev
-      ['DigitalOcean',        'digitalocean',    '#0080FF'],
-      ['Laravel',             'laravel',         '#FF2D20'],    
-      ['Laravel Herd',        null,              '#FF2D20', 'LH'],
-      ['Tailwind',            'tailwindcss',     '#06B6D4'],
-      ['Alpine.js',           'alpinedotjs',     '#77C1D2'],
-      ['Node.js',             'nodedotjs',       '#339933'],
-      ['GitHub Actions',      'githubactions',   '#2088FF'],
-
-      // Ops / CRM / time
-      ['HighLevel (CRM)',     null,              '#2563EB', 'HL'],
-      ['HubSpot',             'hubspot',         '#FF7A59'],
-      ['Hubstaff',            null,              '#00AEF0', 'HS'],
-      ['Time Doctor',         null,              '#F25A2B', 'TD'],
-      ['Lead gen workflows',  null,              '#A78BFA', 'LG'],
-      ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
-
-      // Remote & support
-      ['MS Remote Desktop',   null,              '#0078D4', 'Ms'],
-      ['TeamViewer',          'teamviewer',      '#0E8EE9'],
-      ['AnyDesk',             'anydesk',         '#EF233C'],
-
-      // Design / content
-      ['Adobe Photoshop',     null,              '#31A8FF', 'Ps'],
-      ['Premiere Pro',        null,              '#9999FF', 'Pr'],
-      ['Canva',               'canva',           '#00C4CC'],
-      ['CapCut',              null,              '#c3ccddff', 'CC'],
-
-    ];
-  @endphp
-
-  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    @foreach ($tools as $t)
-      @php
-        [$name, $slug, $hex, $fallback] = [$t[0], $t[1] ?? null, $t[2] ?? '#e5e7eb', $t[3] ?? null];
-      @endphp
-      <div
-        class="group flex items-center gap-3 rounded-xl border px-3 py-2
-               bg-white/70 dark:bg-neutral-900/70 border-black/10 dark:border-white/10
-               hover:-translate-y-0.5 transition shadow-sm hover:shadow"
-        style="box-shadow: 0 0 0 1px {{ $hex }}22 inset;"
-      >
-        @if ($slug)
-          <img
-            src="https://cdn.simpleicons.org/{{ $slug }}/ffffff"
-            alt="{{ $name }} logo"
-            class="h-5 w-5 rounded"
-            style="background-color: {{ $hex }}"
-            loading="lazy"
-          />
-        @else
-          <div class="h-5 w-5 grid place-items-center rounded text-[10px] font-semibold"
-               style="background-color: {{ $hex }}; color: #0b1220">
-            {{ $fallback ?? '•' }}
-          </div>
-        @endif
-        <span class="text-sm text-neutral-800 dark:text-neutral-200">{{ $name }}</span>
-      </div>
-    @endforeach
-  </div>
-</section>
-
-<!-- MISSION / VISION / HOW I CAN HELP -->
-<section id="experience" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Mission, vision & how I can help</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    A clear purpose, a calm process, and support that feels personal.
-  </p>
-
-  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Mission -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Mission</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        Help small teams and solo founders win back time and trust by building lean systems—
-        clear websites, dependable automations, and disciplined trading routines that put
-        results (not noise) first.
-      </p>
-    </article>
-
-    <!-- Vision -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Vision</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        A calm, resilient business where operations run smoothly, clients feel cared for,
-        and decisions are guided by data—not guesswork—with room for people to do their best work.
-      </p>
-    </article>
-
-    <!-- How I can help -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">How I can help</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        I have sat as (COO), trained sales and support teams, and built
-        practical tools—webpages, CRM/ERP flows, and MT4/5 EAs. I will listen first, design
-        a simple plan, and ship improvements you can feel: faster pages, clearer workflows,
-        and a repeatable trading/process rhythm you can trust.
-      </p>
-      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>One-pager sites that explain and convert</li>
-        <li>CRM/ERP workflows & light automations</li>
-        <li>Training, SOPs, and hand-off docs your team will use</li>
-      </ul>
-      <div class="mt-5 flex flex-wrap gap-3">
-        <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Let us work together</a>
-        <a href="mailto:{{ $page->email }}" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Email me</a>
-      </div>
-    </article>
-  </div>
 </section>
 
 <!-- CONTACT -->
