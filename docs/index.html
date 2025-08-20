@@ -33,10 +33,10 @@
 
     <nav class="hidden md:flex gap-6 text-sm">
       <a href="#forex"      class="hover:text-brand-600">About me</a>
-      <a href="#projects"   class="hover:text-brand-600">Projects</a>
-      <a href="#services"   class="hover:text-brand-600">Services</a>
-      <a href="#skills"     class="hover:text-brand-600">Tools</a>
       <a href="#experience" class="hover:text-brand-600">Mission</a>
+      <a href="#projects"   class="hover:text-brand-600">Projects</a>
+      <a href="#skills"     class="hover:text-brand-600">Tools</a>  
+      <a href="#services"   class="hover:text-brand-600">Services</a> 
       <a href="#contact"    class="hover:text-brand-600">Contact</a>
       <!-- Résumé (opens/downloads PDF from /assets/docs/resume.pdf) -->
       <!-- <a href="assets/docs/resume.pdf"
@@ -169,6 +169,55 @@
         />
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / HOW I CAN HELP -->
+<section id="experience" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">Mission, vision & how I can help</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+    A clear purpose, a calm process, and support that feels personal.
+  </p>
+
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Mission -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">Mission</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        Help small teams and solo founders win back time and trust by building lean systems—
+        clear websites, dependable automations, and disciplined trading routines that put
+        results (not noise) first.
+      </p>
+    </article>
+
+    <!-- Vision -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">Vision</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        A calm, resilient business where operations run smoothly, clients feel cared for,
+        and decisions are guided by data—not guesswork—with room for people to do their best work.
+      </p>
+    </article>
+
+    <!-- How I can help -->
+    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
+      <h3 class="font-semibold">How I can help</h3>
+      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        I have sat as (COO), trained sales and support teams, and built
+        practical tools—webpages, CRM/ERP flows, and MT4/5 EAs. I will listen first, design
+        a simple plan, and ship improvements you can feel: faster pages, clearer workflows,
+        and a repeatable trading/process rhythm you can trust.
+      </p>
+      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+        <li>One-pager sites that explain and convert</li>
+        <li>CRM/ERP workflows & light automations</li>
+        <li>Training, SOPs, and hand-off docs your team will use</li>
+      </ul>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Let us work together</a>
+        <a href="mailto:donvenancioiii@gmail.com" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Email me</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -317,163 +366,6 @@
   </script>
 </section>
 
-
-<!-- SERVICES — responsive card slider (Alpine + scroll-snap) -->
-<section id="services" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">What I do</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    I ship one-pagers, wire up automations, and handle ops—end to end.
-  </p>
-
-  <div x-data="svcCarousel()" x-init="init()" class="relative mt-8">
-    <!-- track -->
-    <div
-      x-ref="tray"
-      class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
-             [scrollbar-color:transparent_transparent]"
-      aria-roledescription="carousel"
-    >
-      <template x-for="(s,i) in items" :key="i">
-        <article
-          class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%]
-                 rounded-2xl border border-black/10 dark:border-white/10
-                 bg-white/70 dark:bg-neutral-900/70 p-6
-                 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
-          role="group"
-          :aria-label="`Slide ${i+1} of ${items.length}`"
-        >
-          <h3 class="font-semibold" x-text="s.title"></h3>
-          <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300" x-text="s.desc"></p>
-          <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
-            <template x-for="(pt,pi) in s.points" :key="pi">
-              <li x-text="pt"></li>
-            </template>
-          </ul>
-        </article>
-      </template>
-    </div>
-
-    <!-- controls -->
-    <button
-      @click="prev()" aria-label="Previous"
-      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border
-             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
-             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-    >‹</button>
-    <button
-      @click="next()" aria-label="Next"
-      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border
-             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
-             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
-    >›</button>
-
-    <!-- dots -->
-    <div class="mt-5 flex items-center justify-center gap-2">
-      <template x-for="(_, idx) in pages" :key="idx">
-        <button
-          class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
-          :class="page===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
-          @click="go(idx)"
-          :aria-label="`Go to slide ${idx+1}`"></button>
-      </template>
-    </div>
-  </div>
-
-  <!-- Inline JSON you can edit anytime -->
-  <script id="services-data" type="application/json">
-  [
-    {
-      "title": "Websites & One-Pagers",
-      "desc": "Fast, responsive, SEO-ready pages with analytics.",
-      "points": ["Tailwind/Alpine/React", "Hosting & deployments", "Copy + a11y + performance"]
-    },
-    {
-      "title": "Forex Coaching (Beg → Adv)",
-      "desc": "Rules-based system: plan → execute → record → review.",
-      "points": ["Risk mgmt & psychology", "Journaling & playbooks", "Live reviews"]
-    },
-    {
-      "title": "Forex EA / Automation (MT4/5)",
-      "desc": "Automate entries/exits, alerts, and risk.",
-      "points": ["Backtests & reports", "BE/TSL, partials, risk %", "News filter & VPS setup"]
-    },
-    {
-      "title": "Ops & Training (COO)",
-      "desc": "Playbooks, SOPs, and team training for delivery.",
-      "points": ["Sales & CX flows", "KPIs & dashboards", "Hiring & onboarding kits"]
-    },
-    {
-      "title": "Lead Gen / Social",
-      "desc": "Inbound + outbound workflows and content engines.",
-      "points": ["Funnels & CRMs", "Calendars & auto-DMs", "Reporting & QA"]
-    },
-    {
-      "title": "Design / Photo / Video",
-      "desc": "Clean brand pieces and edits for web & social.",
-      "points": ["PS / PR / CapCut / Canva", "Thumbnails & reels", "Promo kits"]
-    },
-    {
-      "title": "Business Coaching (PH)",
-      "desc": "From permits to ops and go-to-market basics.",
-      "points": ["Demos & scripts", "Budgeting & vendors", "Docs & templates"]
-    },
-    {
-      "title": "Executive Assistant",
-      "desc": "Inbox, calendar, travel, research, and follow-ups.",
-      "points": ["Docs & slides", "Meeting notes & tasks", "Client comms"]
-    }
-  ]
-  </script>
-
-  <!-- Alpine logic -->
-  <script>
-    function svcCarousel(){
-      return {
-        items: [], page: 0, pages: 1, tray: null,
-        init(){
-          try { this.items = JSON.parse(document.getElementById('services-data').textContent) || []; }
-          catch(e){ this.items = []; }
-          this.tray = this.$refs.tray;
-          this.onResize();
-          window.addEventListener('resize', () => this.onResize());
-          this.tray.addEventListener('scroll', () => this._updatePage(), {passive:true});
-        },
-        perView(){
-          const w = this.tray?.clientWidth || window.innerWidth;
-          if (w >= 1024) return 3;   // lg
-          if (w >= 640)  return 2;   // sm+
-          return 1;                   // mobile
-        },
-        onResize(){
-          const pv = this.perView();
-          this.pages = Math.max(1, Math.ceil(this.items.length / pv));
-          this._updatePage();
-        },
-        go(n){
-          const pv = this.perView();
-          n = Math.max(0, Math.min(n, this.pages - 1));
-          const startIdx = Math.min(n * pv, Math.max(0, this.items.length - pv));
-          const cardEl = this.tray.children[startIdx];
-          if (!cardEl) return;
-          const left = cardEl.offsetLeft - this.tray.offsetLeft;
-          this.tray.scrollTo({ left, behavior: 'smooth' });
-        },
-        next(){ this.go(this.page + 1); },
-        prev(){ this.go(this.page - 1); },
-        _updatePage(){
-          const pv = this.perView();
-          // find nearest page by looking at the first visible card
-          let firstIdx = 0;
-          for (let i=0;i<this.tray.children.length;i++){
-            const c = this.tray.children[i];
-            if (c.offsetLeft + c.offsetWidth > this.tray.scrollLeft + 4) { firstIdx = i; break; }
-          }
-          this.page = Math.round(firstIdx / pv);
-        }
-      }
-    }
-  </script>
-</section>
 
 <!-- TOOLS / SKILLS (logos) -->
 <section id="skills" class="mx-auto max-w-6xl px-4 py-20">
@@ -958,53 +850,161 @@
       </div>
 </section>
 
-<!-- MISSION / VISION / HOW I CAN HELP -->
-<section id="experience" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Mission, vision & how I can help</h2>
+<!-- SERVICES — responsive card slider (Alpine + scroll-snap) -->
+<section id="services" class="mx-auto max-w-6xl px-4 py-20">
+  <h2 class="text-2xl md:text-3xl font-semibold">What I do</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">
-    A clear purpose, a calm process, and support that feels personal.
+    I ship one-pagers, wire up automations, and handle ops—end to end.
   </p>
 
-  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Mission -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Mission</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        Help small teams and solo founders win back time and trust by building lean systems—
-        clear websites, dependable automations, and disciplined trading routines that put
-        results (not noise) first.
-      </p>
-    </article>
+  <div x-data="svcCarousel()" x-init="init()" class="relative mt-8">
+    <!-- track -->
+    <div
+      x-ref="tray"
+      class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
+             [scrollbar-color:transparent_transparent]"
+      aria-roledescription="carousel"
+    >
+      <template x-for="(s,i) in items" :key="i">
+        <article
+          class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%]
+                 rounded-2xl border border-black/10 dark:border-white/10
+                 bg-white/70 dark:bg-neutral-900/70 p-6
+                 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+          role="group"
+          :aria-label="`Slide ${i+1} of ${items.length}`"
+        >
+          <h3 class="font-semibold" x-text="s.title"></h3>
+          <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300" x-text="s.desc"></p>
+          <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
+            <template x-for="(pt,pi) in s.points" :key="pi">
+              <li x-text="pt"></li>
+            </template>
+          </ul>
+        </article>
+      </template>
+    </div>
 
-    <!-- Vision -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Vision</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        A calm, resilient business where operations run smoothly, clients feel cared for,
-        and decisions are guided by data—not guesswork—with room for people to do their best work.
-      </p>
-    </article>
+    <!-- controls -->
+    <button
+      @click="prev()" aria-label="Previous"
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border
+             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
+             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >‹</button>
+    <button
+      @click="next()" aria-label="Next"
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border
+             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
+             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >›</button>
 
-    <!-- How I can help -->
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">How I can help</h3>
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        I have sat as (COO), trained sales and support teams, and built
-        practical tools—webpages, CRM/ERP flows, and MT4/5 EAs. I will listen first, design
-        a simple plan, and ship improvements you can feel: faster pages, clearer workflows,
-        and a repeatable trading/process rhythm you can trust.
-      </p>
-      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>One-pager sites that explain and convert</li>
-        <li>CRM/ERP workflows & light automations</li>
-        <li>Training, SOPs, and hand-off docs your team will use</li>
-      </ul>
-      <div class="mt-5 flex flex-wrap gap-3">
-        <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Let us work together</a>
-        <a href="mailto:donvenancioiii@gmail.com" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Email me</a>
-      </div>
-    </article>
+    <!-- dots -->
+    <div class="mt-5 flex items-center justify-center gap-2">
+      <template x-for="(_, idx) in pages" :key="idx">
+        <button
+          class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
+          :class="page===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
+          @click="go(idx)"
+          :aria-label="`Go to slide ${idx+1}`"></button>
+      </template>
+    </div>
   </div>
+
+  <!-- Inline JSON you can edit anytime -->
+  <script id="services-data" type="application/json">
+  [
+    {
+      "title": "Websites & One-Pagers",
+      "desc": "Fast, responsive, SEO-ready pages with analytics.",
+      "points": ["Tailwind/Alpine/React", "Hosting & deployments", "Copy + a11y + performance"]
+    },
+    {
+      "title": "Forex Coaching (Beg → Adv)",
+      "desc": "Rules-based system: plan → execute → record → review.",
+      "points": ["Risk mgmt & psychology", "Journaling & playbooks", "Live reviews"]
+    },
+    {
+      "title": "Forex EA / Automation (MT4/5)",
+      "desc": "Automate entries/exits, alerts, and risk.",
+      "points": ["Backtests & reports", "BE/TSL, partials, risk %", "News filter & VPS setup"]
+    },
+    {
+      "title": "Ops & Training (COO)",
+      "desc": "Playbooks, SOPs, and team training for delivery.",
+      "points": ["Sales & CX flows", "KPIs & dashboards", "Hiring & onboarding kits"]
+    },
+    {
+      "title": "Lead Gen / Social",
+      "desc": "Inbound + outbound workflows and content engines.",
+      "points": ["Funnels & CRMs", "Calendars & auto-DMs", "Reporting & QA"]
+    },
+    {
+      "title": "Design / Photo / Video",
+      "desc": "Clean brand pieces and edits for web & social.",
+      "points": ["PS / PR / CapCut / Canva", "Thumbnails & reels", "Promo kits"]
+    },
+    {
+      "title": "Business Coaching (PH)",
+      "desc": "From permits to ops and go-to-market basics.",
+      "points": ["Demos & scripts", "Budgeting & vendors", "Docs & templates"]
+    },
+    {
+      "title": "Executive Assistant",
+      "desc": "Inbox, calendar, travel, research, and follow-ups.",
+      "points": ["Docs & slides", "Meeting notes & tasks", "Client comms"]
+    }
+  ]
+  </script>
+
+  <!-- Alpine logic -->
+  <script>
+    function svcCarousel(){
+      return {
+        items: [], page: 0, pages: 1, tray: null,
+        init(){
+          try { this.items = JSON.parse(document.getElementById('services-data').textContent) || []; }
+          catch(e){ this.items = []; }
+          this.tray = this.$refs.tray;
+          this.onResize();
+          window.addEventListener('resize', () => this.onResize());
+          this.tray.addEventListener('scroll', () => this._updatePage(), {passive:true});
+        },
+        perView(){
+          const w = this.tray?.clientWidth || window.innerWidth;
+          if (w >= 1024) return 3;   // lg
+          if (w >= 640)  return 2;   // sm+
+          return 1;                   // mobile
+        },
+        onResize(){
+          const pv = this.perView();
+          this.pages = Math.max(1, Math.ceil(this.items.length / pv));
+          this._updatePage();
+        },
+        go(n){
+          const pv = this.perView();
+          n = Math.max(0, Math.min(n, this.pages - 1));
+          const startIdx = Math.min(n * pv, Math.max(0, this.items.length - pv));
+          const cardEl = this.tray.children[startIdx];
+          if (!cardEl) return;
+          const left = cardEl.offsetLeft - this.tray.offsetLeft;
+          this.tray.scrollTo({ left, behavior: 'smooth' });
+        },
+        next(){ this.go(this.page + 1); },
+        prev(){ this.go(this.page - 1); },
+        _updatePage(){
+          const pv = this.perView();
+          // find nearest page by looking at the first visible card
+          let firstIdx = 0;
+          for (let i=0;i<this.tray.children.length;i++){
+            const c = this.tray.children[i];
+            if (c.offsetLeft + c.offsetWidth > this.tray.scrollLeft + 4) { firstIdx = i; break; }
+          }
+          this.page = Math.round(firstIdx / pv);
+        }
+      }
+    }
+  </script>
 </section>
 
 <!-- CONTACT -->
