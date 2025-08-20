@@ -19,7 +19,7 @@
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Start a project</a>
-          <a href="#forex" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Forex spotlight</a>
+          <a href="#forex" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Know me more</a>
           <!-- Résumé button restored -->
           <a href="assets/docs/resume.pdf"
              download="Venancio_Castillo_Resume.pdf"
