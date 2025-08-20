@@ -242,35 +242,161 @@
 </section>
 {{-- ===== /PROJECTS ===== --}}
 
-<!-- SERVICES -->
+<!-- SERVICES — responsive card slider (Alpine + scroll-snap) -->
 <section id="services" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
-  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Forex coaching & EA</h3>
-      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>Beginner → Advanced training</li>
-        <li>Risk mgmt, journaling, psychology</li>
-        <li>MT4/5 EA builds & backtests</li>
-      </ul>
-    </article>
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Websites & one-pagers</h3>
-      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>Tailwind / Alpine / React</li>
-        <li>Hosting & deployments</li>
-        <li>SEO & analytics</li>
-      </ul>
-    </article>
-    <article data-reveal class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-      <h3 class="font-semibold">Ops & training (COO)</h3>
-      <ul class="mt-3 list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-        <li>Sales & service playbooks</li>
-        <li>Team training & SOPs</li>
-        <li>CRM/ERP workflows</li>
-      </ul>
-    </article>
+  <h2 class="text-2xl md:text-3xl font-semibold">What I do</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">
+    I ship one-pagers, wire up automations, and handle ops—end to end.
+  </p>
+
+  <div x-data="svcCarousel()" x-init="init()" class="relative mt-8">
+    <!-- track -->
+    <div
+      x-ref="tray"
+      class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2
+             [scrollbar-color:transparent_transparent]"
+      aria-roledescription="carousel"
+    >
+      <template x-for="(s,i) in items" :key="i">
+        <article
+          class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%]
+                 rounded-2xl border border-black/10 dark:border-white/10
+                 bg-white/70 dark:bg-neutral-900/70 p-6
+                 hover:-translate-y-0.5 transition shadow-sm hover:shadow"
+          role="group"
+          :aria-label="`Slide ${i+1} of ${items.length}`"
+        >
+          <h3 class="font-semibold" x-text="s.title"></h3>
+          <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300" x-text="s.desc"></p>
+          <ul class="mt-4 space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
+            <template x-for="(pt,pi) in s.points" :key="pi">
+              <li x-text="pt"></li>
+            </template>
+          </ul>
+        </article>
+      </template>
+    </div>
+
+    <!-- controls -->
+    <button
+      @click="prev()" aria-label="Previous"
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border
+             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
+             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >‹</button>
+    <button
+      @click="next()" aria-label="Next"
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border
+             border-black/10 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80
+             px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10"
+    >›</button>
+
+    <!-- dots -->
+    <div class="mt-5 flex items-center justify-center gap-2">
+      <template x-for="(_, idx) in pages" :key="idx">
+        <button
+          class="h-2.5 w-2.5 rounded-full border border-black/20 dark:border-white/20"
+          :class="page===idx ? 'bg-brand-600' : 'bg-white/70 dark:bg-neutral-800'"
+          @click="go(idx)"
+          :aria-label="`Go to slide ${idx+1}`"></button>
+      </template>
+    </div>
   </div>
+
+  <!-- Inline JSON you can edit anytime -->
+  <script id="services-data" type="application/json">
+  [
+    {
+      "title": "Websites & One-Pagers",
+      "desc": "Fast, responsive, SEO-ready pages with analytics.",
+      "points": ["Tailwind/Alpine/React", "Hosting & deployments", "Copy + a11y + performance"]
+    },
+    {
+      "title": "Forex Coaching (Beg → Adv)",
+      "desc": "Rules-based system: plan → execute → record → review.",
+      "points": ["Risk mgmt & psychology", "Journaling & playbooks", "Live reviews"]
+    },
+    {
+      "title": "Forex EA / Automation (MT4/5)",
+      "desc": "Automate entries/exits, alerts, and risk.",
+      "points": ["Backtests & reports", "BE/TSL, partials, risk %", "News filter & VPS setup"]
+    },
+    {
+      "title": "Ops & Training (COO)",
+      "desc": "Playbooks, SOPs, and team training for delivery.",
+      "points": ["Sales & CX flows", "KPIs & dashboards", "Hiring & onboarding kits"]
+    },
+    {
+      "title": "Lead Gen / Social",
+      "desc": "Inbound + outbound workflows and content engines.",
+      "points": ["Funnels & CRMs", "Calendars & auto-DMs", "Reporting & QA"]
+    },
+    {
+      "title": "Design / Photo / Video",
+      "desc": "Clean brand pieces and edits for web & social.",
+      "points": ["PS / PR / CapCut / Canva", "Thumbnails & reels", "Promo kits"]
+    },
+    {
+      "title": "Business Coaching (PH)",
+      "desc": "From permits to ops and go-to-market basics.",
+      "points": ["Demos & scripts", "Budgeting & vendors", "Docs & templates"]
+    },
+    {
+      "title": "Executive Assistant",
+      "desc": "Inbox, calendar, travel, research, and follow-ups.",
+      "points": ["Docs & slides", "Meeting notes & tasks", "Client comms"]
+    }
+  ]
+  </script>
+
+  <!-- Alpine logic -->
+  <script>
+    function svcCarousel(){
+      return {
+        items: [], page: 0, pages: 1, tray: null,
+        init(){
+          try { this.items = JSON.parse(document.getElementById('services-data').textContent) || []; }
+          catch(e){ this.items = []; }
+          this.tray = this.$refs.tray;
+          this.onResize();
+          window.addEventListener('resize', () => this.onResize());
+          this.tray.addEventListener('scroll', () => this._updatePage(), {passive:true});
+        },
+        perView(){
+          const w = this.tray?.clientWidth || window.innerWidth;
+          if (w >= 1024) return 3;   // lg
+          if (w >= 640)  return 2;   // sm+
+          return 1;                   // mobile
+        },
+        onResize(){
+          const pv = this.perView();
+          this.pages = Math.max(1, Math.ceil(this.items.length / pv));
+          this._updatePage();
+        },
+        go(n){
+          const pv = this.perView();
+          n = Math.max(0, Math.min(n, this.pages - 1));
+          const startIdx = Math.min(n * pv, Math.max(0, this.items.length - pv));
+          const cardEl = this.tray.children[startIdx];
+          if (!cardEl) return;
+          const left = cardEl.offsetLeft - this.tray.offsetLeft;
+          this.tray.scrollTo({ left, behavior: 'smooth' });
+        },
+        next(){ this.go(this.page + 1); },
+        prev(){ this.go(this.page - 1); },
+        _updatePage(){
+          const pv = this.perView();
+          // find nearest page by looking at the first visible card
+          let firstIdx = 0;
+          for (let i=0;i<this.tray.children.length;i++){
+            const c = this.tray.children[i];
+            if (c.offsetLeft + c.offsetWidth > this.tray.scrollLeft + 4) { firstIdx = i; break; }
+          }
+          this.page = Math.round(firstIdx / pv);
+        }
+      }
+    }
+  </script>
 </section>
 
 <!-- TOOLS / SKILLS (logos) -->
