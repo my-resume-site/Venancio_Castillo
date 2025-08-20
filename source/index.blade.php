@@ -115,7 +115,7 @@
 
 <!-- MISSION / VISION / HOW I CAN HELP -->
 <section id="experience" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Mission, vision & how I can help</h2>
+  <h2 class="text-2xl md:text-3xl font-semibold">Mission, Vision & Goal</h2>
   <p class="mt-2 text-neutral-600 dark:text-neutral-300">
     A clear purpose, a calm process, and support that feels personal.
   </p>
@@ -154,10 +154,10 @@
         <li>CRM/ERP workflows & light automations</li>
         <li>Training, SOPs, and hand-off docs your team will use</li>
       </ul>
-      <div class="mt-5 flex flex-wrap gap-3">
+      <!-- <div class="mt-5 flex flex-wrap gap-3">
         <a href="#contact" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-medium text-white hover:bg-brand-500">Let us work together</a>
         <a href="mailto:{{ $page->email }}" class="rounded-2xl border border-black/10 dark:border-white/10 px-5 py-3 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10">Email me</a>
-      </div>
+      </div> -->
     </article>
   </div>
 </section>
