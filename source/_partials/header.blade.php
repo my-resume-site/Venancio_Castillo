@@ -5,7 +5,7 @@
     </a>
 
     <nav class="hidden md:flex gap-6 text-sm">
-      <a href="#forex"      class="hover:text-brand-600">Forex</a>
+      <a href="#forex"      class="hover:text-brand-600">About</a>
       <a href="#projects"   class="hover:text-brand-600">Projects</a>
       <a href="#services"   class="hover:text-brand-600">Services</a>
       <a href="#skills"     class="hover:text-brand-600">Tools</a>
