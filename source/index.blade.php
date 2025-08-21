@@ -75,7 +75,7 @@
       <div data-reveal>
         <h2 class="text-2xl md:text-3xl font-semibold">About me</h2>
         <p class="mt-3 text-neutral-600 dark:text-neutral-300">
-          I'm Venancio — I’m a skilled and experienced course creator, social media manager, and operations-focused virtual assistant/chief of staff. With 8+ years of experience, I’ve partnered with online coaches, therapists, doctors, podcasters, public speakers, real-estate investors, fitness trainers, energy brokers, photographers, Airbnb hosts, authors, and entrepreneurs across many industries.
+          I'm Venancio a.k.a Ven —  a skilled and experienced course creator, social media manager, and operations-focused virtual assistant/chief of staff. With 8+ years of experience, I’ve partnered with online coaches, therapists, doctors, podcasters, public speakers, real-estate investors, fitness trainers, energy brokers, photographers, Airbnb hosts, authors, and entrepreneurs across many industries.
 
           My expertise spans online course creation, marketing & SMM, website design & deployment, digital launches, project management, podcast management, email campaigns, market research, graphic design, public relations, and a wide range of administrative tasks.
 
