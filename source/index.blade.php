@@ -318,58 +318,72 @@
   @php
     // Order roughly by day-to-day usability / frequency
     $tools = [
-      // Planning / AI
-      ['Notion',              'notion',          '#000000'],
-      ['ClickUp',             'clickup',         '#7C3AED'],
-      ['ChatGPT / OpenAI',    'openai',          '#10A37F'],
-      ['Gamma (AI)',          null,              '#7C3AED', 'GM'],
+     // Planning / AI
+    ['Notion',              'notion',            '#000000'],
+    ['ClickUp',             'clickup',           '#7C3AED'],
+    ['ChatGPT / OpenAI',    'openai',            '#10A37F'],
+    ['Gamma (AI)',          null,                '#7C3AED', 'GM'],
+    ['Whisper (transcription)', null,            '#10A37F', 'Wh'],
 
-      // Project & task management
-      ['Trello',              'trello',          '#0079BF'],
-      ['Asana',               'asana',           '#F06A6A'],
+    // Project & task management
+    ['Trello',              'trello',            '#0079BF'],
+    ['Asana',               'asana',             '#F06A6A'],
 
-      // Automation
-      ['Zapier',              'zapier',          '#FF4A00'],
+    // Automation
+    ['Zapier',              'zapier',            '#FF4A00'],
+    ['Google Apps Script',  null,                '#34A853', 'GAS'],
 
-      // Platforms
-      ['Google Workspace',    'google',          '#4285F4'],
-      ['Microsoft 365',       null,              '#F25022', 'MS'],
+    // Platforms
+    ['Google Workspace',    'google',            '#4285F4'],
+    ['Microsoft 365',       null,                '#F25022', 'MS'],
 
-      // Trading / payments
-      ['MetaTrader 4/5',      null,              '#10B981', 'MT'],
-      ['Stripe',              'stripe',          '#635BFF'],
-      ['Wise',                'wise',            '#22C55E'],        
-      ['Payoneer',            'payoneer',        '#FF4800'],
-      ['PayPal',              'paypal',          '#00457C'],
+    // Trading / payments
+    ['MetaTrader 4/5',      null,                '#10B981', 'MT'],
+    ['Stripe',              'stripe',            '#635BFF'],
+    ['Wise',                'wise',              '#22C55E'],
+    ['Payoneer',            'payoneer',          '#FF4800'],
+    ['PayPal',              'paypal',            '#00457C'],
 
-      // Dev
-      ['DigitalOcean',        'digitalocean',    '#0080FF'],
-      ['Laravel',             'laravel',         '#FF2D20'],    
-      ['Laravel Herd',        null,              '#FF2D20', 'LH'],
-      ['Tailwind',            'tailwindcss',     '#06B6D4'],
-      ['Alpine.js',           'alpinedotjs',     '#77C1D2'],
-      ['Node.js',             'nodedotjs',       '#339933'],
-      ['GitHub Actions',      'githubactions',   '#2088FF'],
+    // Dev
+    ['Visual Studio Code',  'visualstudiocode',  '#007ACC'],
+    ['Laravel',             'laravel',           '#FF2D20'],
+    ['Laravel Herd',        null,                '#FF2D20', 'LH'],
+    ['Tailwind',            'tailwindcss',       '#06B6D4'],
+    ['Alpine.js',           'alpinedotjs',       '#77C1D2'],
+    ['Node.js',             'nodedotjs',         '#339933'],
+    ['MySQL',               'mysql',             '#4479A1'],
+    ['phpMyAdmin',          'phpmyadmin',        '#6C78AF'],
+    ['GitHub Actions',      'githubactions',     '#2088FF'],
 
-      // Ops / CRM / time
-      ['HighLevel (CRM)',     null,              '#2563EB', 'HL'],
-      ['HubSpot',             'hubspot',         '#FF7A59'],
-      ['Hubstaff',            null,              '#00AEF0', 'HS'],
-      ['Time Doctor',         null,              '#F25A2B', 'TD'],
-      ['Lead gen workflows',  null,              '#A78BFA', 'LG'],
-      ['CRM/ERP config',      null,              '#F59E0B', 'CE'],
+    // Remote & support / comms
+    ['RingCentral',         'ringcentral',       '#FF7A00'],
+    ['Zoom',                'zoom',              '#2D8CFF'],
+    ['MS Remote Desktop',   null,                '#0078D4', 'RD'],
+    ['TeamViewer',          'teamviewer',        '#0E8EE9'],
+    ['AnyDesk',             'anydesk',           '#EF233C'],
 
-      // Remote & support
-      ['MS Remote Desktop',   null,              '#0078D4', 'Ms'],
-      ['TeamViewer',          'teamviewer',      '#0E8EE9'],
-      ['AnyDesk',             'anydesk',         '#EF233C'],
+    // Design / content & site builders
+    ['Figma',               'figma',             '#F24E1E'],
+    ['Webflow',             'webflow',           '#4353FF'],
+    ['TailGrids',           null,                '#06B6D4', 'TG'],
+    ['SVGator',             null,                '#FFB13B', 'SG'],
+    ['Shapr3D',             'shapr3d',           '#08A0F7'],
+    ['Adobe Photoshop',     null,                '#31A8FF', 'Ps'],
+    ['Premiere Pro',        null,                '#9999FF', 'Pr'],
+    ['CapCut',              null,                '#161823', 'CC'],
+    ['Canva',               'canva',             '#00C4CC'],
+    ['Prezi',               'prezi',             '#3181FF'],
 
-      // Design / content
-      ['Adobe Photoshop',     null,              '#31A8FF', 'Ps'],
-      ['Premiere Pro',        null,              '#9999FF', 'Pr'],
-      ['Canva',               'canva',           '#00C4CC'],
-      ['CapCut',              null,              '#c3ccddff', 'CC'],
+    // Learning
+    ['Udemy',               'udemy',             '#A435F0'],
 
+    // Ops / CRM / time
+    ['HighLevel (CRM)',     null,                '#2563EB', 'HL'],
+    ['HubSpot',             'hubspot',           '#FF7A59'],
+    ['Hubstaff',            'hubstaff',          '#00AEF0'],
+    ['Time Doctor',         null,                '#F25A2B', 'TD'],
+    ['Lead gen workflows',  null,                '#A78BFA', 'LG'],
+    ['CRM/ERP config',      null,                '#F59E0B', 'CE'],
     ];
   @endphp
 
