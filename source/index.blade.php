@@ -671,8 +671,8 @@
 <!-- CONTACT -->
 <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
   <div class="rounded-2xl border border-black/10 dark:border-white/10 p-6 bg-white/70 dark:bg-neutral-900/70">
-    <h2 class="text-2xl md:text-3xl font-semibold">Let us work together</h2>
-    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Email or book a call. For detailed briefs, use the intake form below.</p>
+    <h2 class="text-2xl md:text-3xl font-semibold">Let's take your business to the next level.</h2>
+    <p class="mt-2 text-neutral-600 dark:text-neutral-300">Having me means you can focus on your strengths while I take care of the weaknesses holding you back.</p>
 
     <div class="mt-6 flex flex-wrap gap-3">
       <a href="mailto:{{ $page->email }}?subject=Project%20inquiry&body=Hi%20Venancio,%0A%0AWhat%20do%20you%20need:"
