@@ -389,7 +389,6 @@
     ['TailGrids',           null,                '#06B6D4', 'TG'],
     ['SVGs',                null,                '#FFB13B', 'SVG'],
     ['LottieFiles',         'lottiefiles',       '#FF6F61'],
-    ['Adobe XD',            null,                '#FF61F6', 'XD'],
     ['Adobe Illustrator',   null,                '#FF9A00', 'Ai'],
     ['Adobe After Effects', null,                '#9999FF', 'Ae'],
     ['Adobe InDesign',      null,                '#FF3366', 'Id'],
