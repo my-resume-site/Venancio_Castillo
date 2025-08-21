@@ -332,6 +332,10 @@
     // Automation
     ['Zapier',              'zapier',            '#FF4A00'],
     ['Google Apps Script',  null,                '#34A853', 'GAS'],
+    ['Make (Integromat)',   'make',              '#FF4A00'],
+    ['n8n',                 'n8n',               '#00BFA5'],
+    ['Pipedream',           'pipedream',         '#00C4CC'],
+    <!-- ['IFTTT',               'ifttt',             '#FF4A00'], -->
 
     // Platforms
     ['Google Workspace',    'google',            '#4285F4'],
