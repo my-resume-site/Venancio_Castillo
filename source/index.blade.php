@@ -334,7 +334,7 @@
     ['Google Apps Script',  null,                '#34A853', 'GAS'],
     ['Make (Integromat)',   'make',              '#FF4A00'],
     ['n8n',                 'n8n',               '#00BFA5'],
-    ['Pipedream',           'pipedream',         '#00C4CC'],
+    ['Pipedream',           null,                '#00C4CC', 'Pd'],
 
     // Platforms
     ['Google Workspace',    'google',            '#4285F4'],
