@@ -92,12 +92,12 @@
           <p>If you’re looking for an Executive Assistant/Chief of Staff who can run administration and operations—while keeping Sales on pace with its KPIs—I’d love to connect.</p>
         </div>
 
-        <ul class="mt-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+        <!-- <ul class="mt-5 space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
           <li>• <span class="font-medium">Sales &amp; communication:</span> English-first client work, training, and playbooks.</li>
           <li>• <span class="font-medium">Ops &amp; systems:</span> CRM/ERP workflows, automations, SOPs.</li>
           <li>• <span class="font-medium">Forex:</span> rules-based process, journaling, MT4/5 EAs.</li>
           <li>• <span class="font-medium">Design &amp; content:</span> Canva/Adobe, decks, brand refreshes.</li>
-        </ul>
+        </ul> -->
 
         <div class="mt-6 flex flex-wrap gap-3">
           <a
