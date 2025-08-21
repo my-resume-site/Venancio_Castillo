@@ -19,3 +19,7 @@
   0%   {background-position: 0% 20%, 0% 80%, 0% 50%}
   100% {background-position: 100% 0%,  30% 100%, 100% 50%}
 }
+
+@layer utilities {
+  .text-justify { text-align: justify; text-justify: inter-word; hyphens: auto; }
+}
