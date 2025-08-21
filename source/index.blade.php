@@ -78,17 +78,17 @@
         <!-- justified paragraphs with comfy spacing -->
         <div class="mt-3 text-neutral-600 dark:text-neutral-300 text-justify leading-relaxed space-y-6 [hyphens:auto]">
           <p>I'm Venancio a.k.a Ven — a skilled and experienced course creator, social media manager, and operations-focused virtual assistant/chief of staff. With 8+ years of experience, I’ve partnered with online coaches, therapists, doctors, podcasters, public speakers, real-estate investors, fitness trainers, energy brokers, photographers, Airbnb hosts, authors, and entrepreneurs across many industries.</p>
-<br></br>
+
           <p>My expertise spans online course creation, marketing &amp; SMM, website design &amp; deployment, digital launches, project management, podcast management, email campaigns, market research, graphic design, public relations, and a wide range of administrative tasks.</p>
 
           <p>On the operations side, I’ve led day-to-day execution across IT, Production, HR, and Sales—owning hiring and recruitment, service development (from design through production), tool selection and implementation, data security/compliance, and building the backbone of an organization: office setup and workflows, brand assets, KPIs, SOPs, and codes of conduct.</p>
-<br></br>
+
           <p>On the sales side, I’ve directly overseen sales operations and worked closely with a Site Director/Center leadership to hit monthly, weekly, and daily KPIs. That includes pipeline hygiene, forecasting, lead routing, enablement (scripts, objection handling, cadences), incentive design, team coaching, and live dashboards—plus the operational follow-through that turns activity into revenue. Sales has been a core part of my career from the start, and I bring that builder’s mindset to every team I support.</p>
-<br></br>
+
           <p>Clients describe me as positive, driven, and curious. My focus is to keep you clear and creative while I turn goals into outcomes—delivering the right tools and better processes so work gets done more effectively and efficiently.</p>
-<br></br>
+
           <p>As an entrepreneur and former Chief Operations Officer (four years), I understand what it takes to scale and why reliable day-to-day support matters. I’m currently applying the same systems mindset to forex, helping investors make their money work through disciplined processes.</p>
-<br></br>
+
           <p>If you’re looking for an Executive Assistant/Chief of Staff who can run administration and operations—while keeping Sales on pace with its KPIs—I’d love to connect.</p>
         </div>
 
