@@ -272,7 +272,7 @@
     {"title":"Author Guidelines","desc":"Simple guide for authors","meta":"Design system","img":"assets/img/projects/4.jpg","url":null,"tags":["Design","Web"]},
     {"title":"Digital Marketing","desc":"Creation + Training","meta":"Ops system","img":"assets/img/projects/5.jpg","url":null,"tags":["Design","Web"]},
     {"title":"Business Outlook","desc":"Thorough data-driven analysis","meta":"Case study","img":"assets/img/projects/6.jpg","url":null,"tags":["Ops","SOPs"]},
-    {"title":"Business Proposal","desc":"Tapping opportunities","meta":"Deploy","img":"assets/img/projects/7.jpg","url":null,"tags":["Pages","SEO"]},
+    {"title":"Business Proposal","desc":"Tapping opportunities","meta":"Deploy","img":"assets/img/projects/7.jpg","url":null,"tags":["Proposal","Pitchdeck"]},
     {"title":"Event Flyering","desc":"Digital Ads","meta":"Ops system","img":"assets/img/projects/8.jpg","url":null,"tags":["CRM","Automation"]},
     {"title":"Graphic Design Options","desc":"Design + Creation","meta":"Design","img":"assets/img/projects/9.jpg","url":null,"tags":["Training","Playbooks"]},
     {"title":"Seasonal Project","desc":"Siezing every opportunity","meta":"Case Study","img":"assets/img/projects/10.jpg","url":null,"tags":["MT4/5","Backtests"]},
