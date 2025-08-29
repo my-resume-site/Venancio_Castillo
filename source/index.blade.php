@@ -175,8 +175,8 @@
 
 {{-- ===== PROJECTS (client-side JSON + Alpine slider) ===== --}}
 <section id="projects" class="mx-auto max-w-6xl px-4 py-20">
-  <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
-  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A rotating look at shipped work and systems.</p>
+  <h2 class="text-2xl md:text-3xl font-semibold">Projects & Certificates</h2>
+  <p class="mt-2 text-neutral-600 dark:text-neutral-300">A sneak-peek to my projects done and certificates acquired</p>
 
   <div
     x-data="projectsCarousel()"
@@ -282,7 +282,8 @@
     {"title":"Sales Training","desc":"Training deck + playbook","meta":"Ops system","img":"assets/img/projects/14.jpg","url":null,"tags":["Design","System"]},
     {"title":"MT4 Custom Indicators","desc":"Profitable trading playbook","meta":"Trading","img":"assets/img/projects/15.jpg","url":null,"tags":["Trading","System"]},
     {"title":"MT4 Custom Indicators","desc":"Profitable trading playbook","meta":"Trading","img":"assets/img/projects/16.jpg","url":null,"tags":["Trading","System"]},
-    {"title":"MT4 Custom EAs","desc":"Profitable trading playbook","meta":"Trading","img":"assets/img/projects/17.jpg","url":null,"tags":["Trading","System"]}
+    {"title":"MT4 Custom EAs","desc":"Profitable trading playbook","meta":"Trading","img":"assets/img/projects/17.jpg","url":null,"tags":["Trading","System"]},
+    {"title":"EF SET English Certificate","desc":"C1 Advanced","meta":"EF SET","img":"assets/img/projects/18.jpg","url":null,"tags":["EFSET","Certificate"]}
   ]
   </script>
 
